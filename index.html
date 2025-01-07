@@ -45,7 +45,8 @@
             align-items: center;
         }
         #about-me img {
-            width: 200px;
+            width: 150px; /* Limit the image size */
+            height: auto;
             border-radius: 50%;
         }
         #intro {
@@ -59,9 +60,10 @@
         /* Social Icons Section */
         .social-icons {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start; /* Align icons to the left */
             align-items: center;
-            gap: 40px; /* Reduced gap between the icons */
+            gap: 20px; /* Reduced gap between the icons */
+            padding: 10px;
         }
         .social-icons div {
             text-align: center;
