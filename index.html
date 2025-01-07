@@ -10,11 +10,25 @@
             color: white;
             font-family: Arial, sans-serif;
         }
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .social-icons div {
+            text-align: center;
+            margin: 10px;
+        }
         .social-icons a {
-            margin: 0 15px;
-            text-decoration: none;
+            font-size: 50px;
             color: white;
-            font-size: 30px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #000;
+        }
+        .social-icons div p {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -42,11 +56,20 @@
     <!-- Professional Profiles Section -->
     <section id="professional-profiles">
         <h2>Professional Profiles</h2>
-        <ul>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-            <li>GitHub: <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a></li>
-            <!-- Add other professional profiles -->
-        </ul>
+        <div class="social-icons">
+            <div>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank">
+                    <i class="fab fa-linkedin"></i> <!-- LinkedIn icon -->
+                </a>
+                <p>LinkedIn</p>
+            </div>
+            <div>
+                <a href="https://github.com/stacykeago" target="_blank">
+                    <i class="fab fa-github"></i> <!-- GitHub icon -->
+                </a>
+                <p>GitHub</p>
+            </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
@@ -97,19 +120,6 @@
         <p>Email: <a href="mailto:stacykeago78@gmail.com">stacykeago78@gmail.com</a></p>
         <p>Phone: +254-XXX-XXX-XXXX</p>
         <!-- Add more contact details -->
-    </section>
-
-    <!-- Social Media Icons -->
-    <section id="social-media">
-        <h2>Connect with Me</h2>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank">
-                <i class="fab fa-linkedin"></i> <!-- LinkedIn icon -->
-            </a>
-            <a href="https://github.com/stacykeago" target="_blank">
-                <i class="fab fa-github"></i> <!-- GitHub icon -->
-            </a>
-        </div>
     </section>
 </body>
 </html>
