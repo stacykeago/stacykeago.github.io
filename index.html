@@ -1,30 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./favicon.png" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
     <title>Stacy Keago Portfolio</title>
+    <!-- Add Font Awesome for the icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background-color: black;
+            background-color: black; /* Background color */
             color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
+        /* Navigation Tabs */
         nav {
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-end;
             gap: 20px;
             background-color: #333;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
         }
 
         nav a {
@@ -39,86 +34,68 @@
             border-radius: 5px;
         }
 
-        section {
-            margin-top: 60px;
-            margin-bottom: 30px;
-            padding: 20px;
-        }
-
         .container {
             display: flex;
             align-items: center;
-            gap: 20px;
-            justify-content: center;
+            gap: 20px; /* Space between image and text */
         }
-
+        #about-me {
+            display: flex;
+            align-items: center;
+        }
         #about-me img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
             border-radius: 50%;
-            object-fit: cover;
-            max-width: 100%;
         }
-
         #intro {
             max-width: 600px;
         }
-
         #intro p {
             font-size: 18px;
             margin: 10px 0;
         }
-
         .social-icons {
             display: flex;
             justify-content: flex-start;
-            gap: 20px;
             align-items: center;
+            gap: 20px; /* Reduced gap between the icons */
         }
-
         .social-icons div {
             text-align: center;
             margin: 10px;
         }
-
         .social-icons a {
             font-size: 50px;
             text-decoration: none;
         }
-
         .social-icons a:hover {
             opacity: 0.8;
         }
-
         .social-icons .linkedin a {
-            color: #0A66C2;
+            color: #0A66C2; /* LinkedIn blue */
         }
-
         .social-icons .github a {
-            color: #333;
+            color: #333; /* GitHub black */
         }
-
         .social-icons .hackerrank a {
-            color: #2EC866;
+            color: #2EC866; /* HackerRank green */
         }
-
         .social-icons div p {
             margin-top: 10px;
         }
 
-        /* Responsive Image Handling */
-        @media screen and (max-width: 600px) {
-            #about-me img {
-                width: 120px;
-                height: 120px;
-            }
-            #intro {
-                font-size: 16px;
-            }
+        section {
+            margin-bottom: 30px; /* Add space after each section */
+            padding: 20px;
+        }
+
+        h1 {
+            padding-left: 20px;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Tabs -->
     <nav>
         <a href="#home">Home</a>
         <a href="#education">Education</a>
@@ -130,6 +107,7 @@
     <h1>Stacy Keago Portfolio</h1>
     <p>This is a work in progress!</p>
 
+    <!-- About Me Section -->
     <section id="home">
         <div class="container">
             <img src="photo.jpg" alt="Stacy Keago">
@@ -143,6 +121,7 @@
         </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education">
         <h2>Education</h2>
         <ul>
@@ -151,30 +130,32 @@
         </ul>
     </section>
 
+    <!-- Professional Profiles Section -->
     <section id="professional-profiles">
         <h2>Professional Profiles</h2>
         <div class="social-icons">
             <div class="linkedin">
                 <a href="https://www.linkedin.com/in/moraas/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin"></i> <!-- LinkedIn icon -->
                 </a>
                 <p>LinkedIn</p>
             </div>
             <div class="github">
                 <a href="https://github.com/stacykeago" target="_blank">
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github"></i> <!-- GitHub icon -->
                 </a>
                 <p>GitHub</p>
             </div>
             <div class="hackerrank">
                 <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank">
-                    <i class="fab fa-hackerrank"></i>
+                    <i class="fab fa-hackerrank"></i> <!-- HackerRank icon -->
                 </a>
                 <p>HackerRank</p>
             </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
@@ -184,6 +165,7 @@
         </ul>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
         <ul>
@@ -192,6 +174,26 @@
         </ul>
     </section>
 
+    <!-- Hobbies and Interests Section -->
+    <section id="hobbies">
+        <h2>Hobbies & Interests</h2>
+        <ul>
+            <li>Pickleball</li>
+            <li>Reading</li>
+            <li>Yoga</li>
+        </ul>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages">
+        <h2>Languages</h2>
+        <ul>
+            <li>English (Native)</li>
+            <li>Swahili (Native)</li>
+        </ul>
+    </section>
+
+    <!-- Contact Information Section -->
     <section id="contact">
         <h2>Contact Information</h2>
         <p>Email: <a href="mailto:stacykeago78@gmail.com">stacykeago78@gmail.com</a></p>
