@@ -22,12 +22,15 @@
             align-items: center;
             background-color: #333;
             padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .tabs a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 12px;
             margin-right: 15px;
             padding: 10px;
         }
@@ -49,6 +52,7 @@
 
         section h2 {
             text-transform: uppercase;
+            font-size: 18px;
         }
 
         #about-me {
@@ -70,9 +74,9 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: yellow;
+            color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 12px;
         }
 
         .resume a:hover {
@@ -119,8 +123,8 @@
         }
 
         .social-icons a {
-            font-size: 36px; /* Slightly smaller icons */
-            color: white; /* Default color */
+            font-size: 36px; /* Reduced icon size */
+            color: white;
         }
 
         .social-icons a:hover {
@@ -129,17 +133,22 @@
 
         /* LinkedIn Blue */
         .social-icons a.linkedin {
-            color: #0077b5;
+            color: #0077b5 !important;
         }
 
         /* GitHub Black */
         .social-icons a.github {
-            color: #333;
+            color: #333 !important;
         }
 
         /* HackerRank Green */
         .social-icons a.hackerrank {
-            color: #2EC866;
+            color: #2EC866 !important;
+        }
+
+        /* Resume Icon Yellow */
+        .social-icons a.resume {
+            color: #ffcc00 !important;
         }
 
         form {
@@ -198,7 +207,12 @@
             position: sticky;
             top: 0;
             background-color: #333;
-            z-index: 1000;
+            z-index: 100;
+        }
+
+        #about-me .title {
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -215,14 +229,14 @@
 
     <!-- About Me Section -->
     <section id="about-me">
-        <img src="photo.jpg" alt="Stacy Keago">
         <div>
-            <h2>About Me</h2>
+            <p class="title">About Me</p>
             <p>👋 Hello! My name is Stacy, and I am a techie!</p>
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
             <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
         </div>
+        <img src="photo.jpg" alt="Stacy Keago">
     </section>
 
     <!-- Professional Profiles Section -->
@@ -230,29 +244,40 @@
         <h2>PROFESSIONAL PROFILES</h2>
         <div class="social-icons">
             <div>
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
                 <p>LinkedIn</p>
             </div>
             <div>
-                <a href="https://github.com/stacykeago" target="_blank" class="github">
-                    <i class="fab fa-github"></i>
-                </a>
+                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
                 <p>GitHub</p>
             </div>
             <div>
-                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank">
-                    <i class="fab fa-hackerrank"></i>
-                </a>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
                 <p>HackerRank</p>
             </div>
             <div>
-                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank" class="resume">
-                    <i class="fas fa-book"></i>
-                </a>
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank" class="resume"><i class="fas fa-book"></i></a>
                 <p>Resume</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>SKILLS</h2>
+        <div class="skills-tabs">
+            <button onclick="showSkills('languages')">Languages</button>
+            <button onclick="showSkills('visualization')">Visualization</button>
+            <button onclick="showSkills('data-science')">Data Science</button>
+            <button onclick="showSkills('tools')">Tools</button>
+        </div>
+        <div class="skills-content" id="skills-content">
+            <p><strong>Languages:</strong></p>
+            <ul>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>R Programming</li>
+            </ul>
         </div>
     </section>
 
@@ -266,40 +291,24 @@
             <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
             <button type="submit">Send Message</button>
         </form>
-        <div class="contact-icons">
-            <a href="mailto:stacykeago78@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
     </section>
 
     <script>
-        function showSkills(skillType) {
-            const skillsContent = document.getElementById("skills-content");
-            if (skillType === "languages") {
-                skillsContent.innerHTML = `
-                    <strong>Languages:</strong>
-                    <ul>
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>R Programming</li>
-                    </ul>`;
-            } else if (skillType === "visualization") {
-                skillsContent.innerHTML = `
-                    <strong>Visualization:</strong>
-                    <ul>
-                        <li>Tableau</li>
-                        <li>Power BI</li>
-                        <li>Looker Studio</li>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                        <li>Plotly</li>
-                        <li>D3.js</li>
-                        <li>ggplot2</li>
-                    </ul>`;
-            } else if (skillType === "data-science") {
-                skillsContent.innerHTML = `
-                    <strong>Data Science:</strong>
-                    <ul>
-                        <li>Machine Learning</li>
-                        <li>Artificial Intelligence</li
+        function showSkills(category) {
+            const skillsContent = document.getElementById('skills-content');
+            const allSkills = `
+                <p><strong>Languages:</strong></p>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>R Programming</li>
+                </ul>
+                <p><strong>Visualization:</strong></p>
+                <ul>
+                    <li>Tableau</li>
+                    <li>Power BI</li>
+                    <li>Looker Studio</li>
+                    <li>Matplotlib</li>
+                    <li>Seaborn</li>
+                    <li>Plotly</li>
+                    <li>D3.js
