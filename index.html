@@ -67,10 +67,9 @@
         }
 
         #about-me img {
-            width: 150px;
-            height: 150px;
+            width: 180px; /* Increased image size */
+            height: 180px;
             border-radius: 50%;
-            order: -1; /* Moves the image to the left */
         }
 
         #about-me .text {
@@ -79,24 +78,6 @@
 
         #about-me h2 {
             margin-bottom: 10px;
-        }
-
-        .resume-button {
-            display: block;
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        .resume-button a {
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #0077b5;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .resume-button a:hover {
-            background-color: #005f8a;
         }
 
         /* Professional Profiles Section */
@@ -126,6 +107,10 @@
 
         .social-icons a.hackerrank {
             color: #00ea64; /* HackerRank original color */
+        }
+
+        .social-icons a.resume {
+            color: #ffcc00; /* Yellow color for the notebook */
         }
 
         /* Skills Section */
@@ -219,8 +204,8 @@
             }
 
             #about-me img {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
             }
 
             form input, form textarea, form button {
@@ -251,9 +236,6 @@
         </div>
         <img src="photo.jpg" alt="Stacy Keago">
     </section>
-    <div class="resume-button">
-        <a href="resume.pdf" target="_blank">Download Resume</a>
-    </div>
 
     <!-- Professional Profiles Section -->
     <section id="professional-profiles">
@@ -271,16 +253,11 @@
                 <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
                 <p>HackerRank</p>
             </div>
+            <div>
+                <a href="resume.pdf" target="_blank" class="resume"><i class="fas fa-book"></i></a>
+                <p>Resume</p>
+            </div>
         </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li>Graduate Diploma in Data Science at Moringa School (2022)</li>
-            <li>Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
-        </ul>
     </section>
 
     <!-- Skills Section -->
