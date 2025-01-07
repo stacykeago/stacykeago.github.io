@@ -15,7 +15,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            padding-top: 60px; /* Adjusted to ensure content starts below the header */
         }
 
         .tabs {
@@ -67,8 +66,8 @@
         }
 
         #about-me img {
-            width: 170px;
-            height: 170px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
         }
 
@@ -76,16 +75,10 @@
             max-width: 600px;
         }
 
-        #about-me h2 {
-            text-align: left;
-            width: 100%; /* Ensures the title is on top */
-            margin-bottom: 10px; /* Adds some space between title and paragraph */
-        }
-
         /* Professional Profiles Section */
         .social-icons {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 40px;
             flex-wrap: wrap;
             margin-top: 20px;
@@ -100,13 +93,24 @@
             color: white;
         }
 
-        .social-icons a:hover {
-            opacity: 0.8;
+        .social-icons a.linkedin {
+            color: #0e76a8; /* LinkedIn color */
         }
 
-        /* Resume Icon Color */
+        .social-icons a.github {
+            color: #333; /* GitHub color */
+        }
+
+        .social-icons a.hackerrank {
+            color: #00ea64; /* HackerRank color */
+        }
+
         .social-icons a.resume {
-            color: #f1c40f !important;
+            color: #f1c40f !important; /* Resume color */
+        }
+
+        .social-icons a:hover {
+            opacity: 0.8;
         }
 
         /* Skills Section */
@@ -225,11 +229,6 @@
             form input, form textarea, form button {
                 width: 90%;
             }
-
-            /* Ensure header doesn't overlap on mobile */
-            body {
-                padding-top: 80px; /* Adjusted for mobile */
-            }
         }
 
         @media (max-width: 480px) {
@@ -253,18 +252,13 @@
             form input, form textarea, form button {
                 width: 100%;
             }
-
-            /* Increase space for mobile screens */
-            body {
-                padding-top: 90px; /* Adjusted for mobile */
-            }
         }
     </style>
 </head>
 <body>
     <!-- Tabs Section -->
     <div class="tabs">
-        <a href="#home">Stacy Keago Portfolio</a>
+        <a href="#">Stacy Keago Portfolio</a>
         <a href="#home">Home</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
@@ -339,7 +333,7 @@
     <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
-        <p>Details about your projects...</p>
+        <p>Details about projects...</p>
     </section>
 
     <!-- Contact Section -->
@@ -353,9 +347,9 @@
         </form>
 
         <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin" style="color:#0e76a8;"></i></a>
-            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github" style="color:#333;"></i></a>
-            <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank"><i class="fab fa-hackerrank" style="color:#00ea64;"></i></a>
+            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank"><i class="fab fa-hackerrank"></i></a>
         </div>
     </section>
 
