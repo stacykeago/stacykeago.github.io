@@ -52,18 +52,35 @@
 
         section h2 {
             text-transform: uppercase;
+            font-size: 18px;
         }
 
         #about-me {
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-top: 20px;
         }
 
         #about-me img {
             width: 150px;
             border-radius: 50%;
+        }
+
+        #about-me .resume {
+            margin-top: 20px;
+        }
+
+        .resume a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .resume a:hover {
+            opacity: 0.8;
         }
 
         .skills-tabs {
@@ -106,7 +123,7 @@
         }
 
         .social-icons a {
-            font-size: 48px;
+            font-size: 36px;
             color: white;
         }
 
@@ -127,11 +144,6 @@
         /* HackerRank Green */
         .social-icons a.hackerrank {
             color: #2EC866 !important;
-        }
-
-        /* Resume Icon Yellow */
-        .social-icons a.resume {
-            color: yellow !important;
         }
 
         form {
@@ -184,6 +196,20 @@
         .contact-icons a:hover {
             color: #0077b5;
         }
+
+        /* Sticky Navbar */
+        .tabs {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #333;
+        }
+
+        /* Resume Icon */
+        .resume a i {
+            font-size: 30px;
+            color: yellow;  /* Set resume icon color to yellow */
+        }
     </style>
 </head>
 <body>
@@ -199,8 +225,8 @@
 
     <!-- About Me Section -->
     <section id="about-me">
-        <h2>About Me</h2>
         <div>
+            <h2>About Me</h2>  <!-- Title Added here -->
             <p>👋 Hello! My name is Stacy, and I am a techie!</p>
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
@@ -214,21 +240,26 @@
         <h2>PROFESSIONAL PROFILES</h2>
         <div class="social-icons">
             <div>
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
                 <p>LinkedIn</p>
             </div>
             <div>
-                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/stacykeago" target="_blank" class="github">
+                    <i class="fab fa-github"></i>
+                </a>
                 <p>GitHub</p>
             </div>
             <div>
-                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank">
+                    <i class="fab fa-hackerrank"></i>
+                </a>
                 <p>HackerRank</p>
             </div>
-            <!-- Resume Icon and Label -->
             <div>
                 <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank" class="resume">
-                    <i class="fas fa-file-alt" style="font-size: 48px;"></i>
+                    <i class="fas fa-book"></i>
                 </a>
                 <p>Resume</p>
             </div>
@@ -279,20 +310,37 @@
         <form action="https://formspree.io/f/mbllpbwk" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+
         <div class="contact-icons">
-            <a href="mailto:stacykeago78@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/moraas/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/stacykeago" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank">
+                <i class="fab fa-hackerrank"></i>
+            </a>
         </div>
     </section>
 
     <script>
-        function showSkills(category) {
-            const skillsContent = document.getElementById('skills-content');
-            const languagesSkills = `
-                <p><strong>Languages:</strong></p>
-                <ul>
-                    <li>Python</li>
-                    <
+        function showSkills(skillType) {
+            const content = {
+                languages: "<strong>Languages:</strong><ul><li>Python</li><li>SQL</li><li>R Programming</li></ul>",
+                visualization: "<strong>Visualization:</strong><ul><li>Tableau</li><li>Power BI</li><li>Looker Studio</li><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>D3.js</li><li>ggplot2</li></ul>",
+                'data-science': "<strong>Data Science:</strong><ul><li>Machine Learning</li><li>Artificial Intelligence</li><li>Computer Vision</li><li>Data Analysis</li><li>Data Science</li><li>Data Engineering</li><li>Predictive Modeling</li><li>Natural Language Processing (NLP)</li><li>Deep Learning</li><li>Statistical Analysis</li><li>Data Wrangling</li><li>Time Series Analysis</li></ul>",
+                tools: "<strong>Tools:</strong><ul><li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li><li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li><li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li><li>CI/CD</li><li>ETL Processes</li></ul>"
+            };
+
+            document.getElementById('skills-content').innerHTML = content[skillType];
+        }
+
+        // Set default skills tab
+        showSkills('languages');
+    </script>
+</body>
+</html>
