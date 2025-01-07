@@ -128,6 +128,11 @@
             color: #2EC866 !important;
         }
 
+        /* Resume Icon Yellow */
+        .social-icons a.resume {
+            color: yellow !important;
+        }
+
         form {
             display: flex;
             flex-direction: column;
@@ -193,13 +198,14 @@
 
     <!-- About Me Section -->
     <section id="about-me">
-        <img src="photo.jpg" alt="Stacy Keago">
+        <h2>About</h2>
         <div>
             <p>👋 Hello! My name is Stacy, and I am a techie!</p>
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
             <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
         </div>
+        <img src="photo.jpg" alt="Stacy Keago">
     </section>
 
     <!-- Professional Profiles Section -->
@@ -218,10 +224,12 @@
                 <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
                 <p>HackerRank</p>
             </div>
-            <div class="resume">
-                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank">
-                    <i class="fas fa-book"></i> Resume
+            <!-- Resume Icon and Label -->
+            <div>
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank" class="resume">
+                    <i class="fas fa-file-alt" style="font-size: 48px;"></i>
                 </a>
+                <p>Resume</p>
             </div>
         </div>
     </section>
@@ -283,71 +291,4 @@
         function showSkills(category) {
             const skillsContent = document.getElementById('skills-content');
             const languagesSkills = `
-                <p><strong>Languages:</strong></p>
-                <ul>
-                    <li>Python</li>
-                    <li>SQL</li>
-                    <li>R Programming</li>
-                </ul>
-            `;
-            const visualizationSkills = `
-                <p><strong>Visualization:</strong></p>
-                <ul>
-                    <li>Tableau</li>
-                    <li>Power BI</li>
-                    <li>Looker Studio</li>
-                    <li>Matplotlib</li>
-                    <li>Seaborn</li>
-                    <li>Plotly</li>
-                    <li>D3.js</li>
-                    <li>ggplot2</li>
-                </ul>
-            `;
-            const dataScienceSkills = `
-                <p><strong>Data Science:</strong></p>
-                <ul>
-                    <li>Machine Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Computer Vision</li>
-                    <li>Data Analysis</li>
-                    <li>Data Science</li>
-                    <li>Data Engineering</li>
-                    <li>Predictive Modeling</li>
-                    <li>Natural Language Processing (NLP)</li>
-                    <li>Deep Learning</li>
-                    <li>Statistical Analysis</li>
-                    <li>Data Wrangling</li>
-                    <li>Time Series Analysis</li>
-                </ul>
-            `;
-            const toolsSkills = `
-                <p><strong>Tools:</strong></p>
-                <ul>
-                    <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
-                    <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
-                    <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
-                    <li>CI/CD</li>
-                    <li>ETL Processes</li>
-                </ul>
-            `;
-
-            switch(category) {
-                case 'languages':
-                    skillsContent.innerHTML = languagesSkills;
-                    break;
-                case 'visualization':
-                    skillsContent.innerHTML = visualizationSkills;
-                    break;
-                case 'data-science':
-                    skillsContent.innerHTML = dataScienceSkills;
-                    break;
-                case 'tools':
-                    skillsContent.innerHTML = toolsSkills;
-                    break;
-                default:
-                    skillsContent.innerHTML = languagesSkills;
-            }
-        }
-    </script>
-</body>
-</html>
+                <p><strong>Languages
