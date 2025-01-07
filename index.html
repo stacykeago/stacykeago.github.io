@@ -6,15 +6,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background-color: black; /* Changed to black */
+            background-color: black; /* Background color */
             color: white;
             font-family: Arial, sans-serif;
         }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between image and text */
+        }
+        #about-me {
+            display: flex;
+            align-items: center;
+        }
+        #about-me img {
+            width: 200px;
+            border-radius: 50%;
+        }
+        #intro {
+            max-width: 600px;
+        }
+        #intro p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
         .social-icons {
             display: flex;
-            justify-content: flex-start; /* Align items to the left */
+            justify-content: flex-start;
             align-items: center;
-            gap: 20px; /* Reduced the gap between the icons */
+            gap: 20px; /* Reduced gap between the icons */
         }
         .social-icons div {
             text-align: center;
@@ -39,9 +59,16 @@
 
     <!-- About Me Section -->
     <section id="about-me">
-        <h2>About Me</h2>
-        <img src="photo.jpg" alt="Stacy Keago" width="200">
-        <p>Here is a brief introduction about myself...</p>
+        <div class="container">
+            <img src="photo.jpg" alt="Stacy Keago">
+            <div id="intro">
+                <h2>About Me</h2>
+                <p>👋 <strong>Hello! My name is Stacy, and I am a techie!</strong></p>
+                <p>💻 I am a passionate <strong>Data Scientist</strong> and <strong>Data Analyst</strong>.</p>
+                <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
+                <p>🌐 I’m currently learning <strong>Networking</strong>, <strong>Cloud Computing</strong>, and <strong>Cybersecurity</strong>.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Education Section -->
