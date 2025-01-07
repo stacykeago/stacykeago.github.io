@@ -62,12 +62,17 @@
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         #about-me img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
+        }
+
+        #about-me .text {
+            max-width: 600px;
         }
 
         /* Professional Profiles Section */
@@ -253,7 +258,7 @@
     <!-- About Me Section -->
     <section id="about-me">
         <h2>About Me</h2>
-        <div>
+        <div class="text">
             <p>👋 Hello! My name is Stacy, and I am a techie!</p>
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
