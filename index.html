@@ -22,9 +22,9 @@
             align-items: center;
             background-color: #333;
             padding: 10px 20px;
-            position: sticky;  /* Make the tabs stick to the top */
-            top: 0;  /* Keep them at the top of the page */
-            z-index: 1000;  /* Ensure it stays above other content */
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .tabs a {
@@ -65,36 +65,21 @@
             border-radius: 50%;
         }
 
-        .social-icons {
-            display: flex;
-            justify-content: flex-start;
-            gap: 40px;
+        #about-me .resume {
             margin-top: 20px;
         }
 
-        .social-icons div {
-            text-align: center;
-        }
-
-        .social-icons a {
-            font-size: 36px;
+        .resume a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             color: white;
+            text-decoration: none;
+            font-size: 18px;
         }
 
-        .social-icons a:hover {
+        .resume a:hover {
             opacity: 0.8;
-        }
-
-        .social-icons a.linkedin {
-            color: #0077b5 !important;
-        }
-
-        .social-icons a.github {
-            color: #333 !important;
-        }
-
-        .social-icons a.hackerrank {
-            color: #2EC866 !important;
         }
 
         .skills-tabs {
@@ -121,9 +106,43 @@
             margin-top: 20px;
         }
 
-        .skills-content ul {
-            list-style-type: disc;
-            margin-left: 20px;
+        .skills-content p {
+            margin: 5px 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .social-icons div {
+            text-align: center;
+        }
+
+        .social-icons a {
+            font-size: 48px;
+            color: white;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+
+        /* LinkedIn Blue */
+        .social-icons a.linkedin {
+            color: #0077b5 !important;
+        }
+
+        /* GitHub Black */
+        .social-icons a.github {
+            color: #333 !important;
+        }
+
+        /* HackerRank Green */
+        .social-icons a.hackerrank {
+            color: #2EC866 !important;
         }
 
         form {
@@ -197,6 +216,11 @@
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
             <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
+            <div class="resume">
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank">
+                    <i class="fas fa-book"></i> Resume
+                </a>
+            </div>
         </div>
     </section>
 
@@ -238,7 +262,12 @@
             <button onclick="showSkills('tools')">Tools</button>
         </div>
         <div class="skills-content" id="skills-content">
-            <!-- Default content will be here initially -->
+            <p><strong>Languages:</strong></p>
+            <ul>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>R Programming</li>
+            </ul>
         </div>
     </section>
 
@@ -270,8 +299,8 @@
     <script>
         function showSkills(category) {
             const skillsContent = document.getElementById('skills-content');
-
             const languagesSkills = `
+                <p><strong>Languages:</strong></p>
                 <ul>
                     <li>Python</li>
                     <li>SQL</li>
@@ -279,6 +308,7 @@
                 </ul>
             `;
             const visualizationSkills = `
+                <p><strong>Visualization:</strong></p>
                 <ul>
                     <li>Tableau</li>
                     <li>Power BI</li>
@@ -291,6 +321,7 @@
                 </ul>
             `;
             const dataScienceSkills = `
+                <p><strong>Data Science:</strong></p>
                 <ul>
                     <li>Machine Learning</li>
                     <li>Artificial Intelligence</li>
@@ -307,6 +338,39 @@
                 </ul>
             `;
             const toolsSkills = `
+                <p><strong>Tools:</strong></p>
                 <ul>
                     <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
-                    <li>Model Deployment (Flask, FastAPI, Docker, Her
+                    <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
+                    <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
+                    <li>CI/CD</li>
+                    <li>ETL Processes</li>
+                </ul>
+            `;
+
+            switch (category) {
+                case 'languages':
+                    skillsContent.innerHTML = languagesSkills;
+                    break;
+                case 'visualization':
+                    skillsContent.innerHTML = visualizationSkills;
+                    break;
+                case 'data-science':
+                    skillsContent.innerHTML = dataScienceSkills;
+                    break;
+                case 'tools':
+                    skillsContent.innerHTML = toolsSkills;
+                    break;
+                default:
+                    skillsContent.innerHTML = languagesSkills;
+                    break;
+            }
+        }
+
+        // Display languages by default on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showSkills('languages');
+        });
+    </script>
+</body>
+</html>
