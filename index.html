@@ -59,20 +59,23 @@
         /* About Me Section */
         #about-me {
             display: flex;
-            align-items: center;
-            gap: 20px;
             flex-wrap: wrap;
-            justify-content: flex-start;
+            align-items: center;
         }
 
         #about-me img {
             width: 160px;
             height: 160px;
             border-radius: 50%;
+            margin-right: 20px;
         }
 
         #about-me .text {
             max-width: 600px;
+        }
+
+        #about-me h2 {
+            margin-bottom: 20px;
         }
 
         /* Professional Profiles Section */
@@ -97,7 +100,18 @@
             opacity: 0.8;
         }
 
-        /* Resume Icon Color */
+        .social-icons a.linkedin {
+            color: #0077b5;
+        }
+
+        .social-icons a.github {
+            color: #333;
+        }
+
+        .social-icons a.hackerrank {
+            color: #2EC866;
+        }
+
         .social-icons a.resume {
             color: #f1c40f !important;
         }
@@ -257,8 +271,8 @@
 
     <!-- About Me Section -->
     <section id="about-me">
-        <h2>About Me</h2>
         <div class="text">
+            <h2>About Me</h2>
             <p>👋 Hello! My name is Stacy, and I am a techie!</p>
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
