@@ -15,7 +15,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            padding-top: 80px; /* Added padding to prevent overlap with fixed header */
         }
 
         /* Tabs/Header Styling */
@@ -49,6 +48,11 @@
         .tabs a:first-child {
             margin-right: auto;
             font-weight: bold;
+        }
+
+        /* Add padding to the body to prevent content from overlapping */
+        body {
+            padding-top: 80px; /* Ensure that there is enough space for the header */
         }
 
         section {
