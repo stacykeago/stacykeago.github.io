@@ -12,9 +12,9 @@
             background-color: black;
             color: white;
             font-family: Georgia, serif;
-            font-size: 12px;
             margin: 0;
             padding: 0;
+            font-size: 12px;
         }
 
         .tabs {
@@ -28,7 +28,7 @@
         .tabs a {
             color: white;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 18px;
             margin-right: 15px;
             padding: 10px;
         }
@@ -63,29 +63,20 @@
             border-radius: 50%;
         }
 
-        #about-me p {
-            margin: 0;
-        }
-
         #about-me .resume {
             margin-top: 20px;
         }
 
-        #about-me .resume a {
-            text-decoration: none;
+        .resume a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             color: white;
-            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
         }
 
-        #about-me .resume a i {
-            font-size: 48px;
-        }
-
-        #about-me .resume a p {
-            margin-top: 10px;
-        }
-
-        #about-me .resume a:hover {
+        .resume a:hover {
             opacity: 0.8;
         }
 
@@ -103,7 +94,6 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 12px;
         }
 
         .skills-tabs button:hover {
@@ -114,8 +104,12 @@
             margin-top: 20px;
         }
 
-        .skills-content p {
-            margin: 5px 0;
+        .skills-content ul {
+            padding-left: 20px;
+        }
+
+        .skills-content ul li {
+            list-style-type: disc;
         }
 
         .social-icons {
@@ -130,7 +124,7 @@
         }
 
         .social-icons a {
-            font-size: 48px; /* Increased icon size */
+            font-size: 32px;
             color: white;
         }
 
@@ -138,21 +132,19 @@
             opacity: 0.8;
         }
 
+        /* LinkedIn Blue */
         .social-icons a.linkedin {
             color: #0077b5 !important;
         }
 
+        /* GitHub Black */
         .social-icons a.github {
             color: #333 !important;
         }
 
+        /* HackerRank Green */
         .social-icons a.hackerrank {
             color: #2EC866 !important;
-        }
-
-        .social-icons div p {
-            font-size: 10px; /* Reduced label size */
-            margin-top: 5px;
         }
 
         form {
@@ -170,7 +162,6 @@
             background-color: #222;
             border: 1px solid #444;
             color: white;
-            font-size: 12px;
         }
 
         form button {
@@ -180,7 +171,6 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 12px;
         }
 
         form button:hover {
@@ -236,28 +226,20 @@
         <h2>PROFESSIONAL PROFILES</h2>
         <div class="social-icons">
             <div>
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin">
-                    <i class="fab fa-linkedin"></i>
-                    <p>LinkedIn</p>
-                </a>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                <p>LinkedIn</p>
             </div>
             <div>
-                <a href="https://github.com/stacykeago" target="_blank" class="github">
-                    <i class="fab fa-github"></i>
-                    <p>GitHub</p>
-                </a>
+                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                <p>GitHub</p>
             </div>
             <div>
-                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank">
-                    <i class="fab fa-hackerrank"></i>
-                    <p>HackerRank</p>
-                </a>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
+                <p>HackerRank</p>
             </div>
-            <div class="resume">
-                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank">
-                    <i class="fas fa-file-alt"></i>
-                    <p>Resume</p>
-                </a>
+            <div>
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank"><i class="fas fa-book"></i></a>
+                <p>Resume</p>
             </div>
         </div>
     </section>
@@ -281,11 +263,7 @@
             <button onclick="showSkills('tools')">Tools</button>
         </div>
         <div class="skills-content" id="skills-content">
-            <!-- Default to showing all skills -->
-            <p><strong>Languages:</strong> Python, SQL, R Programming</p>
-            <p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn, Plotly</p>
-            <p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision, Data Analysis, Data Science, Data Engineering, Predictive Modeling, Natural Language Processing (NLP), Deep Learning, Statistical Analysis, Data Wrangling, Time Series Analysis</p>
-            <p><strong>Tools:</strong> ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras), Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker), Cloud Computing (AWS Lambda, Google Cloud Functions), CI/CD, ETL Processes</p>
+            <!-- Default content is empty until tab is clicked -->
         </div>
     </section>
 
@@ -311,30 +289,57 @@
         <div class="contact-icons">
             <a href="mailto:stacykeago78@gmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </section>
 
     <script>
-        function showSkills(skillType) {
-            const content = document.getElementById("skills-content");
-            switch(skillType) {
+        function showSkills(category) {
+            const skillsContent = document.getElementById('skills-content');
+            let skillsList = '';
+            switch(category) {
                 case 'languages':
-                    content.innerHTML = "<p><strong>Languages:</strong> Python, SQL, R Programming</p>";
+                    skillsList = `
+                        <ul>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>R Programming</li>
+                        </ul>
+                    `;
                     break;
                 case 'visualization':
-                    content.innerHTML = "<p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn, Plotly</p>";
+                    skillsList = `
+                        <ul>
+                            <li>Tableau</li>
+                            <li>Power BI</li>
+                            <li>Looker Studio</li>
+                            <li>Matplotlib</li>
+                            <li>Seaborn</li>
+                            <li>Plotly</li>
+                            <li>D3.js</li>
+                            <li>ggplot2</li>
+                        </ul>
+                    `;
                     break;
                 case 'data-science':
-                    content.innerHTML = "<p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision, Data Analysis, Data Science, Data Engineering, Predictive Modeling, Natural Language Processing (NLP), Deep Learning, Statistical Analysis, Data Wrangling, Time Series Analysis</p>";
+                    skillsList = `
+                        <ul>
+                            <li>Machine Learning</li>
+                            <li>Artificial Intelligence</li>
+                            <li>Computer Vision</li>
+                            <li>Data Analysis</li>
+                            <li>Data Science</li>
+                            <li>Data Engineering</li>
+                            <li>Predictive Modeling</li>
+                            <li>Natural Language Processing (NLP)</li>
+                            <li>Deep Learning</li>
+                            <li>Statistical Analysis</li>
+                            <li>Data Wrangling</li>
+                            <li>Time Series Analysis</li>
+                        </ul>
+                    `;
                     break;
                 case 'tools':
-                    content.innerHTML = "<p><strong>Tools:</strong> ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras), Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker), Cloud Computing (AWS Lambda, Google Cloud Functions), CI/CD, ETL Processes</p>";
-                    break;
-                default:
-                    break;
-            }
-        }
-    </script>
-</body>
-</html>
+                    skillsList = `
+                        <ul>
+                            <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
+                           
