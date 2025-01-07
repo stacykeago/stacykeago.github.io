@@ -46,6 +46,12 @@
             padding: 20px;
         }
 
+        #about-me {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between image and text */
+        }
+
         #about-me img {
             width: 150px;
             border-radius: 50%;
@@ -53,7 +59,7 @@
 
         .social-icons {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end; /* Align icons to the far right */
             gap: 40px;
             margin-top: 20px;
         }
@@ -100,6 +106,26 @@
         form button:hover {
             background-color: #005f8a;
         }
+
+        #contact h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .email-icon {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .email-icon a {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .email-icon a:hover {
+            color: #0077b5;
+        }
     </style>
 </head>
 <body>
@@ -113,17 +139,10 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Home Section -->
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is a work in progress!</p>
-    </section>
-
     <!-- About Me Section -->
     <section id="about-me">
-        <h2>About Me</h2>
+        <img src="photo.jpg" alt="Stacy Keago">
         <div>
-            <img src="photo.jpg" alt="Stacy Keago">
             <p>👋 Hello! My name is Stacy, and I am a techie!</p>
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
@@ -186,10 +205,12 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:stacykeago78@gmail.com">stacykeago78@gmail.com</a></p>
-        <p>Phone: +254-XXX-XXX-XXXX</p>
         <h3>Let's Connect!</h3>
+        <div class="email-icon">
+            <a href="mailto:stacykeago78@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
         <form action="#" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
