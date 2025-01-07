@@ -38,58 +38,71 @@
             border-radius: 5px;
         }
 
+        /* Sections */
         section {
             margin-top: 60px; /* Add margin-top to avoid overlap with navigation */
             margin-bottom: 30px; /* Add space after each section */
             padding: 20px;
         }
 
+        /* About Me Section */
         .container {
             display: flex;
             align-items: center;
             gap: 20px; /* Space between image and text */
+            justify-content: center; /* Center the content */
         }
-        #about-me {
-            display: flex;
-            align-items: center;
-        }
+
         #about-me img {
-            width: 200px;
+            width: 150px; /* Set a fixed size */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 50%;
+            max-width: 100%; /* Make it responsive */
         }
+
         #intro {
             max-width: 600px;
         }
+
         #intro p {
             font-size: 18px;
             margin: 10px 0;
         }
+
+        /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             gap: 20px; /* Reduced gap between the icons */
         }
+
         .social-icons div {
             text-align: center;
             margin: 10px;
         }
+
         .social-icons a {
             font-size: 50px;
             text-decoration: none;
         }
+
         .social-icons a:hover {
             opacity: 0.8;
         }
+
         .social-icons .linkedin a {
             color: #0A66C2; /* LinkedIn blue */
         }
+
         .social-icons .github a {
             color: #333; /* GitHub black */
         }
+
         .social-icons .hackerrank a {
             color: #2EC866; /* HackerRank green */
         }
+
         .social-icons div p {
             margin-top: 10px;
         }
