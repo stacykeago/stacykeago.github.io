@@ -206,6 +206,25 @@
         </div>
     </section>
 
+    <!-- Professional Profiles Section -->
+    <section id="professional-profiles">
+        <h2>PROFESSIONAL PROFILES</h2>
+        <div class="social-icons">
+            <div>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <p>LinkedIn</p>
+            </div>
+            <div>
+                <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
+                <p>GitHub</p>
+            </div>
+            <div>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank"><i class="fab fa-hackerrank"></i></a>
+                <p>HackerRank</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
     <section id="education">
         <h2>EDUCATION</h2>
@@ -274,7 +293,7 @@
                 others: `<p><strong>Others:</strong> Model Deployment (Flask, FastAPI), Google Cloud, AWS, Azure</p>`,
             };
 
-            skillsContent.innerHTML = category === 'all' ? allSkills : skills[category];
+            skillsContent.innerHTML = skills[category] || allSkills;
         }
     </script>
 </body>
