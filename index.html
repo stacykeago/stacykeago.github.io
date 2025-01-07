@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,111 +7,118 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <title>Stacy Keago Portfolio</title>
     <style>
-        /* Basic Reset */
-        body, h1, h2, p, ul, li {
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        nav {
+        /* Tabs */
+        .tabs {
             display: flex;
-            justify-content: center;
-            gap: 30px;
+            justify-content: space-between;
+            padding: 20px;
             background-color: #333;
-            padding: 10px 0;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
             z-index: 100;
         }
-
-        nav a {
+        .tabs ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .tabs li {
+            display: inline;
+        }
+        .tabs a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
             padding: 10px;
         }
-
-        nav a:hover {
-            background-color: #555;
+        .tabs a:hover {
+            background-color: #575757;
             border-radius: 5px;
         }
+        .tabs .portfolio-name {
+            margin-left: auto;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+        }
 
+        /* Sections */
         section {
-            margin-top: 100px; /* Add space under the fixed navigation */
+            margin-top: 80px; /* Added space between tabs and content */
             padding: 20px;
         }
 
-        /* About Me Section */
         #about-me {
             display: flex;
-            align-items: center;
             gap: 20px;
-            justify-content: center;
+            align-items: center;
         }
 
         #about-me img {
             width: 150px;
-            height: 150px;
             border-radius: 50%;
-            object-fit: cover;
-            max-width: 100%;
         }
 
-        @media screen and (max-width: 600px) {
-            #about-me img {
-                width: 120px;
-                height: 120px;
-            }
+        .container {
+            display: flex;
+            gap: 20px;
         }
 
-        h1, h2 {
-            font-size: 2em;
+        /* Contact form */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #333;
             color: white;
+            border: 1px solid #555;
         }
 
-        p {
-            font-size: 1.2em;
-            line-height: 1.6em;
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
 
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            margin-bottom: 10px;
+        .contact-form button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Navigation Tabs -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <!-- Tabs Section -->
+    <div class="tabs">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="portfolio-name">Stacy Keago Portfolio</div>
+    </div>
 
-    <!-- Home Section -->
-    <section id="home">
-        <div id="about-me">
-            <img src="photo.jpg" alt="Stacy Keago" />
-            <div id="intro">
-                <h1>About Me</h1>
-                <p>👋 Hello! My name is Stacy, and I am a techie!</p>
-                <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
+    <!-- About Me Section -->
+    <section id="about-me">
+        <div class="container">
+            <img src="photo.jpg" alt="Stacy Keago">
+            <div>
+                <h2>About Me</h2>
+                <p>👋 <strong>Hello! My name is Stacy, and I am a techie!</strong></p>
+                <p>💻 I am a passionate <strong>Data Scientist</strong> and <strong>Data Analyst</strong>.</p>
                 <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
-                <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
+                <p>🌐 I’m currently learning <strong>Networking</strong>, <strong>Cloud Computing</strong>, and <strong>Cybersecurity</strong>.</p>
             </div>
         </div>
     </section>
@@ -121,18 +127,43 @@
     <section id="education">
         <h2>Education</h2>
         <ul>
-            <li>Graduate Diploma in Data Science at Moringa School (2022)</li>
-            <li>Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
+            <li>1 - Graduate Diploma in Data Science at Moringa School (2022)</li>
+            <li>2 - Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
         </ul>
+    </section>
+
+    <!-- Professional Profiles Section -->
+    <section id="professional-profiles">
+        <h2>Professional Profiles</h2>
+        <div class="social-icons">
+            <div>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank">
+                    <i class="fab fa-linkedin" style="color:#0077b5;"></i>
+                </a>
+                <p>LinkedIn</p>
+            </div>
+            <div>
+                <a href="https://github.com/stacykeago" target="_blank">
+                    <i class="fab fa-github" style="color:#333;"></i>
+                </a>
+                <p>GitHub</p>
+            </div>
+            <div>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank">
+                    <i class="fab fa-hacker-news" style="color:#00e676;"></i>
+                </a>
+                <p>HackerRank</p>
+            </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Programming Languages: Python | SQL | R</li>
+            <li>Programming Languages: Python | SQL | R Programming</li>
             <li>Data Science</li>
-            <li>Visualization: Tableau | Power BI</li>
+            <li>Visualization: Tableau | Looker Studio | Power BI</li>
         </ul>
     </section>
 
@@ -140,8 +171,8 @@
     <section id="projects">
         <h2>My Projects</h2>
         <ul>
-            <li><a href="#">Project 1</a></li>
-            <li><a href="#">Project 2</a></li>
+            <li><a href="#">Project 1</a> - Description of the project</li>
+            <li><a href="#">Project 2</a> - Description of the project</li>
         </ul>
     </section>
 
@@ -149,8 +180,18 @@
     <section id="contact">
         <h2>Contact Information</h2>
         <p>Email: <a href="mailto:stacykeago78@gmail.com">stacykeago78@gmail.com</a></p>
+        <p>Phone: +254-XXX-XXX-XXXX</p>
+
+        <h3>Let's Connect!</h3>
+        <div class="contact-form">
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
 </body>
-
 </html>
