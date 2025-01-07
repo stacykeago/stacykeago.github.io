@@ -57,7 +57,7 @@
 
         #about-me {
             display: flex;
-            align-items: center;
+            justify-content: flex-start;
             gap: 20px;
         }
 
@@ -85,7 +85,7 @@
 
         .resume a i {
             font-size: 30px;
-            color: yellow;  /* Ensure resume icon color is yellow */
+            color: yellow;  /* Set resume icon color to yellow */
         }
 
         .skills-tabs {
@@ -313,39 +313,4 @@
         <h2>CONTACT</h2>
         <h3>Let's Connect!</h3>
         <form action="https://formspree.io/f/mbllpbwk" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-
-        <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/stacykeago" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank">
-                <i class="fab fa-hackerrank"></i>
-            </a>
-        </div>
-    </section>
-
-    <script>
-        function showSkills(skillType) {
-            const content = {
-                languages: "<strong>Languages:</strong><ul><li>Python</li><li>SQL</li><li>R Programming</li></ul>",
-                visualization: "<strong>Visualization:</strong><ul><li>Tableau</li><li>Power BI</li><li>Looker Studio</li><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>D3.js</li><li>ggplot2</li></ul>",
-                'data-science': "<strong>Data Science:</strong><ul><li>Machine Learning</li><li>Artificial Intelligence</li><li>Computer Vision</li><li>Data Analysis</li><li>Data Science</li><li>Data Engineering</li><li>Predictive Modeling</li><li>Natural Language Processing (NLP)</li><li>Deep Learning</li><li>Statistical Analysis</li><li>Data Wrangling</li><li>Time Series Analysis</li></ul>",
-                tools: "<strong>Tools:</strong><ul><li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li><li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li><li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li><li>CI/CD</li><li>ETL Processes</li></ul>"
-            };
-
-            document.getElementById('skills-content').innerHTML = content[skillType];
-        }
-
-        // Set default skills tab
-        showSkills('languages');
-    </script>
-</body>
-</html>
+            <input type
