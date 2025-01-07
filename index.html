@@ -5,85 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stacy Keago Portfolio</title>
 
-    <!-- Add Font Awesome for the icons -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background-color: black; /* Background color */
+            background-color: black;
             color: white;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .container {
-            display: flex;
-            align-items: center;
-            gap: 20px; /* Space between image and text */
-        }
-        #about-me {
-            display: flex;
-            align-items: center;
-        }
-        #about-me img {
-            width: 150px; /* Adjusted image size */
-            border-radius: 50%;
-        }
-        #intro {
-            max-width: 600px;
-        }
-        #intro p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+
         .tabs {
             display: flex;
-            justify-content: flex-start;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
             background-color: #333;
-            padding: 10px;
+            padding: 10px 20px;
         }
+
         .tabs a {
             color: white;
             text-decoration: none;
             font-size: 18px;
+            margin-right: 15px;
             padding: 10px;
-            border-radius: 5px;
         }
+
         .tabs a:hover {
             background-color: #444;
+            border-radius: 5px;
         }
+
+        .tabs a:first-child {
+            margin-right: auto; /* Push other links to the right */
+        }
+
         section {
-            margin-top: 50px; /* Space between sections */
+            margin-top: 40px;
+            padding: 20px;
         }
+
+        #about-me img {
+            width: 150px;
+            border-radius: 50%;
+        }
+
         .social-icons {
             display: flex;
             justify-content: center;
             gap: 40px;
+            margin-top: 20px;
         }
+
         .social-icons div {
             text-align: center;
         }
+
         .social-icons a {
             font-size: 36px;
             color: white;
-            text-decoration: none;
         }
+
         .social-icons a:hover {
-            color: #000;
+            opacity: 0.8;
         }
-        .social-icons div p {
-            margin-top: 10px;
-        }
+
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
+
         form input, form textarea {
             padding: 10px;
-            margin: 5px 0;
+            margin: 10px 0;
             width: 80%;
             max-width: 400px;
+            background-color: #222;
+            border: 1px solid #444;
+            color: white;
         }
+
         form button {
             padding: 10px 20px;
             background-color: #0077b5;
@@ -92,6 +96,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         form button:hover {
             background-color: #005f8a;
         }
@@ -100,12 +105,12 @@
 <body>
     <!-- Tabs Section -->
     <div class="tabs">
+        <a href="#" style="font-weight: bold;">Stacy Keago Portfolio</a>
         <a href="#home">Home</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a href="#" style="margin-left:auto; padding: 10px;">Stacy Keago Portfolio</a>
     </div>
 
     <!-- Home Section -->
@@ -116,15 +121,13 @@
 
     <!-- About Me Section -->
     <section id="about-me">
-        <div class="container">
+        <h2>About Me</h2>
+        <div>
             <img src="photo.jpg" alt="Stacy Keago">
-            <div id="intro">
-                <h2>About Me</h2>
-                <p>👋 <strong>Hello! My name is Stacy, and I am a techie!</strong></p>
-                <p>💻 I am a passionate <strong>Data Scientist</strong> and <strong>Data Analyst</strong>.</p>
-                <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
-                <p>🌐 I’m currently learning <strong>Networking</strong>, <strong>Cloud Computing</strong>, and <strong>Cybersecurity</strong>.</p>
-            </div>
+            <p>👋 Hello! My name is Stacy, and I am a techie!</p>
+            <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
+            <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
+            <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
         </div>
     </section>
 
@@ -132,8 +135,8 @@
     <section id="education">
         <h2>Education</h2>
         <ul>
-            <li>1 - Graduate Diploma in Data Science at Moringa School (2022)</li>
-            <li>2 - Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
+            <li>Graduate Diploma in Data Science at Moringa School (2022)</li>
+            <li>Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
         </ul>
     </section>
 
@@ -186,8 +189,6 @@
         <h2>Contact Information</h2>
         <p>Email: <a href="mailto:stacykeago78@gmail.com">stacykeago78@gmail.com</a></p>
         <p>Phone: +254-XXX-XXX-XXXX</p>
-
-        <!-- Let's Connect Section -->
         <h3>Let's Connect!</h3>
         <form action="#" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
@@ -196,6 +197,5 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
-
 </body>
 </html>
