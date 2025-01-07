@@ -127,6 +127,11 @@
             opacity: 0.8;
         }
 
+        /* Add colors to the profile icons */
+        .social-icons a.linkedin { color: #0077b5; } /* LinkedIn Blue */
+        .social-icons a.github { color: #333; } /* GitHub Black */
+        .social-icons a.hackerrank { color: #2EC866; } /* HackerRank Green */
+
         form {
             display: flex;
             flex-direction: column;
@@ -211,15 +216,15 @@
         <h2>PROFESSIONAL PROFILES</h2>
         <div class="social-icons">
             <div>
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
                 <p>LinkedIn</p>
             </div>
             <div>
-                <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
                 <p>GitHub</p>
             </div>
             <div>
-                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank"><i class="fab fa-hackerrank"></i></a>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
                 <p>HackerRank</p>
             </div>
         </div>
@@ -285,7 +290,39 @@
                 <p><strong>Languages:</strong> Python, SQL, R Programming</p>
                 <p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn</p>
                 <p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision</p>
-                <p><strong>Others:</strong> Model Deployment (Flask, FastAPI), Google Cloud, AWS, Azure</p>`;
-            const skills = {
-                languages: `<p><strong>Languages:</strong> Python, SQL, R Programming</p>`,
-                visualization: `<
+                <p><strong>Others:</strong> Model Deployment (Flask, FastAPI), Google Cloud, AWS, Azure</p>
+            `;
+            const languagesSkills = `
+                <p><strong>Languages:</strong> Python, SQL, R Programming</p>
+            `;
+            const visualizationSkills = `
+                <p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn</p>
+            `;
+            const dataScienceSkills = `
+                <p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision</p>
+            `;
+            const otherSkills = `
+                <p><strong>Others:</strong> Model Deployment (Flask, FastAPI), Google Cloud, AWS, Azure</p>
+            `;
+            
+            switch(category) {
+                case 'all':
+                    skillsContent.innerHTML = allSkills;
+                    break;
+                case 'languages':
+                    skillsContent.innerHTML = languagesSkills;
+                    break;
+                case 'visualization':
+                    skillsContent.innerHTML = visualizationSkills;
+                    break;
+                case 'data-science':
+                    skillsContent.innerHTML = dataScienceSkills;
+                    break;
+                case 'others':
+                    skillsContent.innerHTML = otherSkills;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
