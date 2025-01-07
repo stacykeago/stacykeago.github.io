@@ -68,13 +68,14 @@
 
         .resume a {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            color: white;
             text-decoration: none;
-            font-size: 18px;
+            color: white;
+        }
+
+        .resume a p {
             margin-top: 10px;
-            flex-direction: column; /* Align the text under the icon */
         }
 
         .resume a:hover {
@@ -131,17 +132,17 @@
 
         /* LinkedIn Blue */
         .social-icons a.linkedin {
-            color: #0077b5;
+            color: #0077b5 !important;
         }
 
         /* GitHub Black */
         .social-icons a.github {
-            color: #333;
+            color: #333 !important;
         }
 
         /* HackerRank Green */
         .social-icons a.hackerrank {
-            color: #2EC866;
+            color: #2EC866 !important;
         }
 
         form {
@@ -215,34 +216,45 @@
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
             <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
+            <div class="resume">
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank">
+                    <i class="fas fa-book"></i>
+                    <p>Resume</p>
+                </a>
+            </div>
         </div>
     </section>
 
-    
-   <!-- Professional Profiles Section -->
-<section id="professional-profiles">
-    <h2>PROFESSIONAL PROFILES</h2>
-    <div class="social-icons">
-        <div>
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-            <p>LinkedIn</p>
+    <!-- Professional Profiles Section -->
+    <section id="professional-profiles">
+        <h2>PROFESSIONAL PROFILES</h2>
+        <div class="social-icons">
+            <div>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <p>LinkedIn</p>
+                </a>
+            </div>
+            <div>
+                <a href="https://github.com/stacykeago" target="_blank" class="github">
+                    <i class="fab fa-github"></i>
+                    <p>GitHub</p>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank">
+                    <i class="fab fa-hackerrank"></i>
+                    <p>HackerRank</p>
+                </a>
+            </div>
+            <div class="resume">
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank">
+                    <i class="fas fa-book"></i>
+                    <p>Resume</p>
+                </a>
+            </div>
         </div>
-        <div>
-            <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
-            <p>GitHub</p>
-        </div>
-        <div>
-            <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
-            <p>HackerRank</p>
-        </div>
-        <div class="resume">
-            <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank">
-                <i class="fas fa-book"></i>
-                <p>Resume</p>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Education Section -->
     <section id="education">
@@ -263,8 +275,11 @@
             <button onclick="showSkills('tools')">Tools</button>
         </div>
         <div class="skills-content" id="skills-content">
-            <!-- Default to showing languages -->
-            <p>Python, SQL, R Programming</p>
+            <!-- Default to showing all skills -->
+            <p><strong>Languages:</strong> Python, SQL, R Programming</p>
+            <p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn, Plotly</p>
+            <p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision, Data Analysis, Data Science, Data Engineering, Predictive Modeling, Natural Language Processing (NLP), Deep Learning, Statistical Analysis, Data Wrangling, Time Series Analysis</p>
+            <p><strong>Tools:</strong> ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras), Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker), Cloud Computing (AWS Lambda, Google Cloud Functions), CI/CD, ETL Processes</p>
         </div>
     </section>
 
@@ -290,38 +305,27 @@
         <div class="contact-icons">
             <a href="mailto:stacykeago78@gmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </section>
 
     <script>
-        function showSkills(category) {
-            const skillsContent = document.getElementById('skills-content');
-            
-            const languagesSkills = `
-                <p>Python, SQL, R Programming</p>
-            `;
-            const visualizationSkills = `
-                <p>Tableau, Power BI, Looker Studio, Matplotlib, Seaborn, Plotly</p>
-            `;
-            const dataScienceSkills = `
-                <p>Machine Learning, Artificial Intelligence, Computer Vision, Data Analysis, Data Science, Data Engineering, Predictive Modeling, Natural Language Processing (NLP), Deep Learning, Statistical Analysis, Data Wrangling, Time Series Analysis</p>
-            `;
-            const toolsSkills = `
-                <p>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras), Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker), Cloud Computing (AWS Lambda, Google Cloud Functions), CI/CD, ETL Processes</p>
-            `;
-            
-            switch(category) {
+        function showSkills(skillType) {
+            const content = document.getElementById("skills-content");
+            switch(skillType) {
                 case 'languages':
-                    skillsContent.innerHTML = languagesSkills;
+                    content.innerHTML = "<p><strong>Languages:</strong> Python, SQL, R Programming</p>";
                     break;
                 case 'visualization':
-                    skillsContent.innerHTML = visualizationSkills;
+                    content.innerHTML = "<p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn, Plotly</p>";
                     break;
                 case 'data-science':
-                    skillsContent.innerHTML = dataScienceSkills;
+                    content.innerHTML = "<p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision, Data Analysis, Data Science, Data Engineering, Predictive Modeling, Natural Language Processing (NLP), Deep Learning, Statistical Analysis, Data Wrangling, Time Series Analysis</p>";
                     break;
                 case 'tools':
-                    skillsContent.innerHTML = toolsSkills;
+                    content.innerHTML = "<p><strong>Tools:</strong> ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras), Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker), Cloud Computing (AWS Lambda, Google Cloud Functions), CI/CD, ETL Processes</p>";
+                    break;
+                default:
                     break;
             }
         }
