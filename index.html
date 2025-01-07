@@ -3,117 +3,122 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./favicon.png" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <title>Stacy Keago Portfolio</title>
+
+    <!-- Add Font Awesome for the icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background-color: black;
+            background-color: black; /* Background color */
             color: white;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
-
-        /* Tabs */
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between image and text */
+        }
+        #about-me {
+            display: flex;
+            align-items: center;
+        }
+        #about-me img {
+            width: 150px; /* Adjusted image size */
+            border-radius: 50%;
+        }
+        #intro {
+            max-width: 600px;
+        }
+        #intro p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
         .tabs {
             display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-        }
-        .tabs ul {
-            display: flex;
+            justify-content: flex-start;
             gap: 20px;
-            list-style: none;
-        }
-        .tabs li {
-            display: inline;
+            background-color: #333;
+            padding: 10px;
         }
         .tabs a {
             color: white;
             text-decoration: none;
+            font-size: 18px;
             padding: 10px;
-        }
-        .tabs a:hover {
-            background-color: #575757;
             border-radius: 5px;
         }
-        .tabs .portfolio-name {
-            margin-left: auto;
-            padding: 10px;
-            color: white;
-            font-weight: bold;
+        .tabs a:hover {
+            background-color: #444;
         }
-
-        /* Sections */
         section {
-            margin-top: 100px; /* Added space between tabs and content */
-            padding: 20px;
+            margin-top: 50px; /* Space between sections */
         }
-
-        #about-me {
+        .social-icons {
             display: flex;
-            gap: 20px;
-            align-items: center;
+            justify-content: center;
+            gap: 40px;
         }
-
-        #about-me img {
-            width: 150px;
-            border-radius: 50%;
+        .social-icons div {
+            text-align: center;
         }
-
-        .container {
-            display: flex;
-            gap: 20px;
-        }
-
-        /* Contact form */
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            background-color: #333;
+        .social-icons a {
+            font-size: 36px;
             color: white;
-            border: 1px solid #555;
+            text-decoration: none;
         }
-
-        .contact-form button {
-            background-color: #4CAF50;
+        .social-icons a:hover {
+            color: #000;
+        }
+        .social-icons div p {
+            margin-top: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        form input, form textarea {
+            padding: 10px;
+            margin: 5px 0;
+            width: 80%;
+            max-width: 400px;
+        }
+        form button {
+            padding: 10px 20px;
+            background-color: #0077b5;
             color: white;
             border: none;
-            padding: 10px;
+            border-radius: 5px;
             cursor: pointer;
         }
-
-        .contact-form button:hover {
-            background-color: #45a049;
+        form button:hover {
+            background-color: #005f8a;
         }
     </style>
 </head>
 <body>
-
     <!-- Tabs Section -->
     <div class="tabs">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="portfolio-name">Stacy Keago Portfolio</div>
+        <a href="#home">Home</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#" style="margin-left:auto; padding: 10px;">Stacy Keago Portfolio</a>
     </div>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is a work in progress!</p>
+    </section>
 
     <!-- About Me Section -->
     <section id="about-me">
         <div class="container">
             <img src="photo.jpg" alt="Stacy Keago">
-            <div>
+            <div id="intro">
                 <h2>About Me</h2>
                 <p>👋 <strong>Hello! My name is Stacy, and I am a techie!</strong></p>
                 <p>💻 I am a passionate <strong>Data Scientist</strong> and <strong>Data Analyst</strong>.</p>
@@ -182,15 +187,14 @@
         <p>Email: <a href="mailto:stacykeago78@gmail.com">stacykeago78@gmail.com</a></p>
         <p>Phone: +254-XXX-XXX-XXXX</p>
 
+        <!-- Let's Connect Section -->
         <h3>Let's Connect!</h3>
-        <div class="contact-form">
-            <form>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
 </body>
