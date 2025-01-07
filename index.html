@@ -15,9 +15,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;  /* Remove center alignment */
         }
 
         .tabs {
@@ -53,24 +50,27 @@
         section {
             margin-top: 80px;
             padding: 20px;
-            width: 90%;
-            max-width: 1200px;
+        }
+
+        section h2 {
+            text-transform: uppercase;
         }
 
         /* About Me Section */
         #about-me {
             display: flex;
-            flex-direction: row;
-            gap: 20px;
             align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
             flex-wrap: wrap;
+            text-align: left;
         }
 
         #about-me img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            order: -1;  /* Keep image on the left */
+            order: -1; /* Moves the image to the left */
         }
 
         #about-me .text {
@@ -78,17 +78,16 @@
         }
 
         #about-me h2 {
-            width: 100%;
-            text-align: left;
+            margin-bottom: 10px;
         }
 
         /* Professional Profiles Section */
         .social-icons {
             display: flex;
+            justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
             margin-top: 20px;
-            justify-content: flex-start;
         }
 
         .social-icons div {
@@ -97,23 +96,16 @@
 
         .social-icons a {
             font-size: 48px;
-            color: #0077b5; /* Restored color for LinkedIn */
+            color: white;
         }
 
         .social-icons a:hover {
             opacity: 0.8;
         }
 
-        .social-icons a.github {
-            color: #333; /* Restored color for GitHub */
-        }
-
-        .social-icons a.hackerrank {
-            color: #1e7c64; /* Restored color for HackerRank */
-        }
-
+        /* Resume Icon Color */
         .social-icons a.resume {
-            color: #f1c40f !important; /* Restored color for Resume */
+            color: #f1c40f !important;
         }
 
         /* Skills Section */
@@ -121,7 +113,7 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
-            justify-content: flex-start;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
@@ -146,17 +138,15 @@
         form {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             margin-top: 30px;
-            width: 100%;
-            max-width: 500px;
         }
 
-        form input,
-        form textarea {
+        form input, form textarea {
             padding: 10px;
             margin: 10px 0;
-            width: 100%;
+            width: 80%;
+            max-width: 400px;
             background-color: #222;
             border: 1px solid #444;
             color: white;
@@ -175,8 +165,13 @@
             background-color: #005f8a;
         }
 
+        #contact h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .contact-icons {
-            text-align: left;
+            text-align: center;
             margin-top: 20px;
         }
 
@@ -198,14 +193,19 @@
                 align-items: flex-start;
             }
 
+            .tabs a {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
             #about-me {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
             }
 
             #about-me img {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
             }
 
             .social-icons {
@@ -220,10 +220,14 @@
             .skills-content p {
                 font-size: 14px;
             }
+
+            form input, form textarea, form button {
+                width: 90%;
+            }
         }
 
         @media (max-width: 480px) {
-            body {
+            .tabs {
                 padding: 10px;
             }
 
@@ -240,9 +244,7 @@
                 font-size: 36px;
             }
 
-            form input,
-            form textarea,
-            form button {
+            form input, form textarea, form button {
                 width: 100%;
             }
         }
@@ -261,8 +263,8 @@
 
     <!-- About Me Section -->
     <section id="about-me">
-        <h2>About Me</h2>
         <div class="text">
+            <h2>About Me</h2>
             <p>👋 Hello! My name is Stacy, and I am a techie!</p>
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
@@ -348,8 +350,7 @@
                         <li>Python</li>
                         <li>SQL</li>
                         <li>R Programming</li>
-                    </ul>
-                `;
+                    </ul>`;
             } else if (skillType === 'visualization') {
                 skillsContent.innerHTML = `
                     <h3>Visualization:</h3>
@@ -357,26 +358,39 @@
                         <li>Tableau</li>
                         <li>Power BI</li>
                         <li>Looker Studio</li>
-                    </ul>
-                `;
+                        <li>Matplotlib</li>
+                        <li>Seaborn</li>
+                        <li>Plotly</li>
+                        <li>D3.js</li>
+                        <li>ggplot2</li>
+                    </ul>`;
             } else if (skillType === 'data-science') {
                 skillsContent.innerHTML = `
                     <h3>Data Science:</h3>
                     <ul>
                         <li>Machine Learning</li>
-                        <li>Data Analysis</li>
                         <li>Artificial Intelligence</li>
-                    </ul>
-                `;
+                        <li>Computer Vision</li>
+                        <li>Data Analysis</li>
+                        <li>Data Science</li>
+                        <li>Data Engineering</li>
+                        <li>Predictive Modeling</li>
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Deep Learning</li>
+                        <li>Statistical Analysis</li>
+                        <li>Data Wrangling</li>
+                        <li>Time Series Analysis</li>
+                    </ul>`;
             } else if (skillType === 'tools') {
                 skillsContent.innerHTML = `
                     <h3>Tools:</h3>
                     <ul>
-                        <li>TensorFlow</li>
-                        <li>Docker</li>
-                        <li>AWS</li>
-                    </ul>
-                `;
+                        <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
+                        <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
+                        <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
+                        <li>CI/CD</li>
+                        <li>ETL Processes</li>
+                    </ul>`;
             }
         }
     </script>
