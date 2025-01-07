@@ -16,6 +16,7 @@
             padding: 0;
         }
 
+        /* Sticky Tabs */
         .tabs {
             display: flex;
             justify-content: space-between;
@@ -45,20 +46,12 @@
             font-weight: bold;
         }
 
-        section {
-            margin-top: 40px;
-            padding: 20px;
-        }
-
-        section h2 {
-            text-transform: uppercase;
-            font-size: 18px;
-        }
-
+        /* About Me Section */
         #about-me {
             display: flex;
             align-items: center;
             gap: 20px;
+            padding: 20px;
         }
 
         #about-me img {
@@ -70,19 +63,7 @@
             margin-top: 20px;
         }
 
-        .resume a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-        }
-
-        .resume a:hover {
-            opacity: 0.8;
-        }
-
+        /* Skills Tabs */
         .skills-tabs {
             display: flex;
             gap: 15px;
@@ -103,14 +84,7 @@
             background-color: #555;
         }
 
-        .skills-content {
-            margin-top: 20px;
-        }
-
-        .skills-content p {
-            margin: 5px 0;
-        }
-
+        /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: flex-start;
@@ -123,7 +97,7 @@
         }
 
         .social-icons a {
-            font-size: 36px; /* Reduced icon size */
+            font-size: 36px;
             color: white;
         }
 
@@ -186,23 +160,7 @@
             margin-bottom: 20px;
         }
 
-        .contact-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .contact-icons a {
-            font-size: 36px;
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-icons a:hover {
-            color: #0077b5;
-        }
-
-        /* Sticky tabs */
+        /* Sticky Tabs */
         .tabs {
             position: sticky;
             top: 0;
@@ -210,10 +168,16 @@
             z-index: 100;
         }
 
-        #about-me .title {
-            font-size: 16px;
-            font-weight: bold;
+        /* Skills Content */
+        .skills-content {
+            margin-top: 20px;
         }
+
+        /* Skills */
+        .skills-content p {
+            margin: 5px 0;
+        }
+        
     </style>
 </head>
 <body>
@@ -345,10 +309,9 @@
                     <li>ETL Processes</li>
                 </ul>
             `;
-            
             skillsContent.innerHTML = allSkills;
         }
-
+        
         // Show Languages by default
         showSkills('languages');
     </script>
