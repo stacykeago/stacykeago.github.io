@@ -1,89 +1,98 @@
-<!DOCTYPE html>  
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
     <title>Stacy Keago Portfolio</title>
-    <!-- Add Font Awesome for the icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background-color: black; /* Background color */
+            background-color: black;
             color: white;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .container {
-            display: flex;
-            align-items: center;
-            gap: 20px; /* Space between image and text */
-        }
-        #about-me {
-            display: flex;
-            align-items: center;
-        }
-        #about-me img {
-            width: 200px;
-            border-radius: 50%;
-        }
-        #intro {
-            max-width: 600px;
-        }
-        #intro p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .social-icons {
+
+        nav {
             display: flex;
             justify-content: flex-start;
-            align-items: center;
-            gap: 20px; /* Reduced gap between the icons */
+            gap: 20px;
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
         }
-        .social-icons div {
-            text-align: center;
-            margin: 10px;
-        }
-        .social-icons a {
-            font-size: 50px;
+
+        nav a {
+            color: white;
             text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
         }
-        .social-icons a:hover {
-            opacity: 0.8;
-        }
-        .social-icons .linkedin a {
-            color: #0A66C2; /* LinkedIn blue */
-        }
-        .social-icons .github a {
-            color: #333; /* GitHub black */
-        }
-        .social-icons .hackerrank a {
-            color: #2EC866; /* HackerRank green */
-        }
-        .social-icons div p {
-            margin-top: 10px;
+
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
         }
 
         section {
-            margin-bottom: 30px; /* Add space after each section */
+            margin-top: 60px;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        #about-me img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: 600px) {
+            #about-me img {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <h1>Stacy Keago Portfolio</h1>
     <p>This is a work in progress!</p>
 
-    <!-- About Me Section -->
-    <section id="about-me">
+    <section id="home">
         <div class="container">
             <img src="photo.jpg" alt="Stacy Keago">
             <div id="intro">
                 <h2>About Me</h2>
-                <p>👋 <strong>Hello! My name is Stacy, and I am a techie!</strong></p>
-                <p>💻 I am a passionate <strong>Data Scientist</strong> and <strong>Data Analyst</strong>.</p>
+                <p>👋 Hello! My name is Stacy, and I am a techie!</p>
+                <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
                 <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
-                <p>🌐 I’m currently learning <strong>Networking</strong>, <strong>Cloud Computing</strong>, and <strong>Cybersecurity</strong>.</p>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education">
         <h2>Education</h2>
         <ul>
@@ -92,74 +101,27 @@
         </ul>
     </section>
 
-    <!-- Professional Profiles Section -->
-    <section id="professional-profiles">
-        <h2>Professional Profiles</h2>
-        <div class="social-icons">
-            <div class="linkedin">
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank">
-                    <i class="fab fa-linkedin"></i> <!-- LinkedIn icon -->
-                </a>
-                <p>LinkedIn</p>
-            </div>
-            <div class="github">
-                <a href="https://github.com/stacykeago" target="_blank">
-                    <i class="fab fa-github"></i> <!-- GitHub icon -->
-                </a>
-                <p>GitHub</p>
-            </div>
-            <div class="hackerrank">
-                <a href="https://www.hackerrank.com/profile/stacykeago78" target="_blank">
-                    <i class="fab fa-hackerrank"></i> <!-- HackerRank icon -->
-                </a>
-                <p>HackerRank</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Programming Languages: Python | SQL | R Programming</li>
+            <li>Programming Languages: Python | SQL | R</li>
             <li>Data Science</li>
-            <li>Visualization: Tableau | Looker Studio | Power BI</li>
+            <li>Visualization: Tableau | Power BI</li>
         </ul>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
         <ul>
-            <li><a href="#">Project 1</a> - Description of the project</li>
-            <li><a href="#">Project 2</a> - Description of the project</li>
+            <li><a href="#">Project 1</a></li>
+            <li><a href="#">Project 2</a></li>
         </ul>
     </section>
 
-    <!-- Hobbies and Interests Section -->
-    <section id="hobbies">
-        <h2>Hobbies & Interests</h2>
-        <ul>
-            <li>Pickleball</li>
-            <li>Reading</li>
-            <li>Yoga</li>
-        </ul>
-    </section>
-
-    <!-- Languages Section -->
-    <section id="languages">
-        <h2>Languages</h2>
-        <ul>
-            <li>English (Native)</li>
-            <li>Swahili (Native)</li>
-        </ul>
-    </section>
-
-    <!-- Contact Information Section -->
     <section id="contact">
         <h2>Contact Information</h2>
         <p>Email: <a href="mailto:stacykeago78@gmail.com">stacykeago78@gmail.com</a></p>
-        <p>Phone: +254-XXX-XXX-XXXX</p>
     </section>
+
 </body>
 </html>
