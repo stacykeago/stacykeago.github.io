@@ -62,6 +62,51 @@
             border-radius: 50%;
         }
 
+        #about-me .resume {
+            margin-top: 20px;
+        }
+
+        .resume a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .resume a:hover {
+            opacity: 0.8;
+        }
+
+        .skills-tabs {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .skills-tabs button {
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .skills-tabs button:hover {
+            background-color: #555;
+        }
+
+        .skills-content {
+            margin-top: 20px;
+        }
+
+        .skills-content p {
+            margin: 5px 0;
+        }
+
         .social-icons {
             display: flex;
             justify-content: flex-start; /* Align icons to the far left */
@@ -153,6 +198,11 @@
             <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
             <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
             <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
+            <div class="resume">
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank">
+                    <i class="fas fa-book"></i> Resume
+                </a>
+            </div>
         </div>
     </section>
 
@@ -165,44 +215,23 @@
         </ul>
     </section>
 
-    <!-- Professional Profiles Section -->
-    <section id="professional-profiles">
-        <h2>PROFESSIONAL PROFILES</h2>
-        <div class="social-icons">
-            <div>
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank">
-                    <i class="fab fa-linkedin" style="color:#0077b5;"></i>
-                </a>
-                <p>LinkedIn</p>
-            </div>
-            <div>
-                <a href="https://github.com/stacykeago" target="_blank">
-                    <i class="fab fa-github" style="color:#333;"></i>
-                </a>
-                <p>GitHub</p>
-            </div>
-            <div>
-                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank">
-                    <i class="fab fa-hacker-news" style="color:#00e676;"></i>
-                </a>
-                <p>HackerRank</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Skills Section -->
     <section id="skills">
         <h2>SKILLS</h2>
-        <ul>
-            <li>Python, SQL, R Programming</li>
-            <li>Google Cloud, AWS, Azure</li>
-            <li>Machine Learning, Artificial Intelligence, Computer Vision</li>
-            <li>Data Analysis, Data Science, Data Engineering</li>
-            <li>Data Visualization (Tableau, Power BI, Looker Studio, Matplotlib, Seaborn)</li>
-            <li>ML Libraries (TensorFlow, PyTorch, scikit-learn)</li>
-            <li>Model Deployment (Flask, FastAPI)</li>
-            <li>Version Control (Git)</li>
-        </ul>
+        <div class="skills-tabs">
+            <button onclick="showSkills('all')">All</button>
+            <button onclick="showSkills('languages')">Languages</button>
+            <button onclick="showSkills('visualization')">Visualization</button>
+            <button onclick="showSkills('data-science')">Data Science</button>
+            <button onclick="showSkills('others')">Others</button>
+        </div>
+        <div class="skills-content" id="skills-content">
+            <!-- Default to showing all skills -->
+            <p><strong>Languages:</strong> Python, SQL, R Programming</p>
+            <p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn</p>
+            <p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision</p>
+            <p><strong>Others:</strong> Model Deployment (Flask, FastAPI), Google Cloud, AWS, Azure</p>
+        </div>
     </section>
 
     <!-- Projects Section -->
@@ -229,5 +258,24 @@
             <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </section>
+
+    <script>
+        function showSkills(category) {
+            const skillsContent = document.getElementById('skills-content');
+            const allSkills = `
+                <p><strong>Languages:</strong> Python, SQL, R Programming</p>
+                <p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn</p>
+                <p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision</p>
+                <p><strong>Others:</strong> Model Deployment (Flask, FastAPI), Google Cloud, AWS, Azure</p>`;
+            const skills = {
+                languages: `<p><strong>Languages:</strong> Python, SQL, R Programming</p>`,
+                visualization: `<p><strong>Visualization:</strong> Tableau, Power BI, Looker Studio, Matplotlib, Seaborn</p>`,
+                'data-science': `<p><strong>Data Science:</strong> Machine Learning, Artificial Intelligence, Computer Vision</p>`,
+                others: `<p><strong>Others:</strong> Model Deployment (Flask, FastAPI), Google Cloud, AWS, Azure</p>`,
+            };
+
+            skillsContent.innerHTML = category === 'all' ? allSkills : skills[category];
+        }
+    </script>
 </body>
 </html>
