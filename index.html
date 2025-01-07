@@ -14,7 +14,6 @@
             font-family: Georgia, serif;
             margin: 0;
             padding: 0;
-            font-size: 12px;
         }
 
         .tabs {
@@ -23,6 +22,9 @@
             align-items: center;
             background-color: #333;
             padding: 10px 20px;
+            position: sticky;  /* Make the tabs stick to the top */
+            top: 0;  /* Keep them at the top of the page */
+            z-index: 1000;  /* Ensure it stays above other content */
         }
 
         .tabs a {
@@ -63,21 +65,36 @@
             border-radius: 50%;
         }
 
-        #about-me .resume {
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
             margin-top: 20px;
         }
 
-        .resume a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
+        .social-icons div {
+            text-align: center;
         }
 
-        .resume a:hover {
+        .social-icons a {
+            font-size: 36px;
+            color: white;
+        }
+
+        .social-icons a:hover {
             opacity: 0.8;
+        }
+
+        .social-icons a.linkedin {
+            color: #0077b5 !important;
+        }
+
+        .social-icons a.github {
+            color: #333 !important;
+        }
+
+        .social-icons a.hackerrank {
+            color: #2EC866 !important;
         }
 
         .skills-tabs {
@@ -104,43 +121,9 @@
             margin-top: 20px;
         }
 
-        .skills-content p {
-            margin: 5px 0;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: flex-start; /* Align icons to the far left */
-            gap: 40px;
-            margin-top: 20px;
-        }
-
-        .social-icons div {
-            text-align: center;
-        }
-
-        .social-icons a {
-            font-size: 36px; /* Adjusted icon size */
-            color: white;
-        }
-
-        .social-icons a:hover {
-            opacity: 0.8;
-        }
-
-        /* LinkedIn Blue */
-        .social-icons a.linkedin {
-            color: #0077b5 !important;
-        }
-
-        /* GitHub Black */
-        .social-icons a.github {
-            color: #333 !important;
-        }
-
-        /* HackerRank Green */
-        .social-icons a.hackerrank {
-            color: #2EC866 !important;
+        .skills-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
         }
 
         form {
@@ -255,7 +238,7 @@
             <button onclick="showSkills('tools')">Tools</button>
         </div>
         <div class="skills-content" id="skills-content">
-            <!-- Default to showing nothing -->
+            <!-- Default content will be here initially -->
         </div>
     </section>
 
@@ -287,6 +270,7 @@
     <script>
         function showSkills(category) {
             const skillsContent = document.getElementById('skills-content');
+
             const languagesSkills = `
                 <ul>
                     <li>Python</li>
@@ -325,23 +309,4 @@
             const toolsSkills = `
                 <ul>
                     <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
-                    <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
-                    <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
-                    <li>CI/CD</li>
-                    <li>ETL Processes</li>
-                </ul>
-            `;
-
-            if (category === 'languages') {
-                skillsContent.innerHTML = languagesSkills;
-            } else if (category === 'visualization') {
-                skillsContent.innerHTML = visualizationSkills;
-            } else if (category === 'data-science') {
-                skillsContent.innerHTML = dataScienceSkills;
-            } else if (category === 'tools') {
-                skillsContent.innerHTML = toolsSkills;
-            }
-        }
-    </script>
-</body>
-</html>
+                    <li>Model Deployment (Flask, FastAPI, Docker, Her
