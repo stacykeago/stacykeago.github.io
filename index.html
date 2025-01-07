@@ -17,7 +17,7 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            align-items: center;  /* Center all content except header */
+            align-items: flex-start;  /* Remove center alignment */
         }
 
         .tabs {
@@ -53,25 +53,24 @@
         section {
             margin-top: 80px;
             padding: 20px;
-            width: 80%;
-            max-width: 1000px;  /* Center content and limit width */
+            width: 90%;
+            max-width: 1200px;
         }
 
         /* About Me Section */
         #about-me {
             display: flex;
-            align-items: flex-start;
+            flex-direction: row;
             gap: 20px;
+            align-items: flex-start;
             flex-wrap: wrap;
-            justify-content: center;  /* Center the content */
-            text-align: center;  /* Center text */
         }
 
         #about-me img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            order: -1;  /* Move image to the left */
+            order: -1;  /* Keep image on the left */
         }
 
         #about-me .text {
@@ -80,16 +79,16 @@
 
         #about-me h2 {
             width: 100%;
-            text-align: center;
+            text-align: left;
         }
 
         /* Professional Profiles Section */
         .social-icons {
             display: flex;
-            justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
             margin-top: 20px;
+            justify-content: flex-start;
         }
 
         .social-icons div {
@@ -98,16 +97,23 @@
 
         .social-icons a {
             font-size: 48px;
-            color: white;
+            color: #0077b5; /* Restored color for LinkedIn */
         }
 
         .social-icons a:hover {
             opacity: 0.8;
         }
 
-        /* Resume Icon Color */
+        .social-icons a.github {
+            color: #333; /* Restored color for GitHub */
+        }
+
+        .social-icons a.hackerrank {
+            color: #1e7c64; /* Restored color for HackerRank */
+        }
+
         .social-icons a.resume {
-            color: #f1c40f !important;
+            color: #f1c40f !important; /* Restored color for Resume */
         }
 
         /* Skills Section */
@@ -115,7 +121,7 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
 
@@ -140,7 +146,7 @@
         form {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             margin-top: 30px;
             width: 100%;
             max-width: 500px;
@@ -170,7 +176,7 @@
         }
 
         .contact-icons {
-            text-align: center;
+            text-align: left;
             margin-top: 20px;
         }
 
@@ -187,10 +193,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                align-items: flex-start;  /* Allow content to stretch for smaller screens */
-            }
-
             .tabs {
                 flex-direction: column;
                 align-items: flex-start;
@@ -198,12 +200,12 @@
 
             #about-me {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
 
             #about-me img {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
             }
 
             .social-icons {
