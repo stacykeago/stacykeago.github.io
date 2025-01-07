@@ -291,4 +291,63 @@
         function showSkills(category) {
             const skillsContent = document.getElementById('skills-content');
             const languagesSkills = `
-                <p><strong>Languages
+                <p><strong>Languages:</strong></p>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>R Programming</li>
+                </ul>
+            `;
+            const visualizationSkills = `
+                <p><strong>Visualization:</strong></p>
+                <ul>
+                    <li>Tableau</li>
+                    <li>Power BI</li>
+                    <li>Looker Studio</li>
+                    <li>Matplotlib</li>
+                    <li>Seaborn</li>
+                    <li>Plotly</li>
+                    <li>D3.js</li>
+                    <li>ggplot2</li>
+                </ul>
+            `;
+            const dataScienceSkills = `
+                <p><strong>Data Science:</strong></p>
+                <ul>
+                    <li>Machine Learning</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Computer Vision</li>
+                    <li>Data Analysis</li>
+                    <li>Data Science</li>
+                    <li>Data Engineering</li>
+                    <li>Predictive Modeling</li>
+                    <li>Natural Language Processing (NLP)</li>
+                    <li>Deep Learning</li>
+                    <li>Statistical Analysis</li>
+                    <li>Data Wrangling</li>
+                    <li>Time Series Analysis</li>
+                </ul>
+            `;
+            const toolsSkills = `
+                <p><strong>Tools:</strong></p>
+                <ul>
+                    <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
+                    <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
+                    <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
+                    <li>CI/CD</li>
+                    <li>ETL Processes</li>
+                </ul>
+            `;
+            if (category === 'languages') {
+                skillsContent.innerHTML = languagesSkills;
+            } else if (category === 'visualization') {
+                skillsContent.innerHTML = visualizationSkills;
+            } else if (category === 'data-science') {
+                skillsContent.innerHTML = dataScienceSkills;
+            } else if (category === 'tools') {
+                skillsContent.innerHTML = toolsSkills;
+            }
+        }
+    </script>
+</body>
+</html>
