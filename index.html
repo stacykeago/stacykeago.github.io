@@ -62,6 +62,7 @@
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
+            flex-direction: row; /* Default to row */
             justify-content: flex-start;
         }
 
@@ -94,19 +95,19 @@
         }
 
         .social-icons a.linkedin {
-            color: #0e76a8; /* LinkedIn color */
+            color: #0e76a8;
         }
 
         .social-icons a.github {
-            color: #333; /* GitHub color */
+            color: #333;
         }
 
         .social-icons a.hackerrank {
-            color: #00ea64; /* HackerRank color */
+            color: #00ea64;
         }
 
         .social-icons a.resume {
-            color: #f1c40f !important; /* Resume color */
+            color: #f1c40f !important;
         }
 
         .social-icons a:hover {
@@ -204,7 +205,7 @@
             }
 
             #about-me {
-                flex-direction: column;
+                flex-direction: column-reverse; /* Switch order */
                 text-align: center;
             }
 
@@ -267,8 +268,8 @@
     </div>
 
     <!-- About Me Section -->
-    <section id="about-me">
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <section id="home">
+        <div id="about-me">
             <img src="photo.jpg" alt="Stacy Keago">
             <div class="text">
                 <h2>About Me</h2>
@@ -401,14 +402,4 @@
                 skillsContent.innerHTML = `
                     <h3>Tools:</h3>
                     <ul>
-                        <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
-                        <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
-                        <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
-                        <li>CI/CD</li>
-                        <li>ETL Processes</li>
-                    </ul>`;
-            }
-        }
-    </script>
-</body>
-</html>
+                        <li
