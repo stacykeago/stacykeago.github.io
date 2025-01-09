@@ -1,83 +1,441 @@
-<!-- Projects Section -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="project-container">
-        <div class="project-box">
-            <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/ad%20clicks.jpg" alt="Project 1">
-        </div>
-        <div class="project-box">
-            <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/fraud.jpg" alt="Project 2">
-        </div>
-        <div class="project-box">
-            <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/spam%20emails.jpg" alt="Project 3">
-        </div>
-        <div class="project-box">
-            <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/retailh.jpg" alt="Retail Project" class="retail-image">
-            <div class="project-info">
-                <a href="https://github.com/stacykeago/Data-analyst-at-Carrefour-Kenya-to-determine-most-relevant-marketing-strategies-that-will-result-in" target="_blank" class="project-title">
-                    Association Rules model on supermarket data
-                </a>
-                <p class="hover-text">Data analyst at Carrefour Kenya to determine most relevant marketing strategies that will result in the highest number of sales</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stacy Keago Portfolio</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R71825VDTK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R71825VDTK');
+    </script>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .tabs a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 15px;
+            padding: 10px;
+        }
+
+        .tabs a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        .tabs a:first-child {
+            margin-right: auto;
+            font-weight: bold;
+        }
+
+        section {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        section h2 {
+            text-transform: uppercase;
+        }
+
+        /* About Me Section */
+        #about-me {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            flex-direction: row; /* Default to row */
+            justify-content: flex-start;
+        }
+
+        #about-me img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+        }
+
+        #about-me .text {
+            max-width: 600px;
+        }
+
+        /* Professional Profiles Section */
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-icons div {
+            text-align: center;
+        }
+
+        .social-icons a {
+            font-size: 48px;
+            color: white;
+        }
+
+        .social-icons a.linkedin {
+            color: #0e76a8;
+        }
+
+        .social-icons a.github {
+            color: #333;
+        }
+
+        .social-icons a.hackerrank {
+            color: #00ea64;
+        }
+
+        .social-icons a.resume {
+            color: #f1c40f !important;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+
+        /* Skills Section */
+        .skills-tabs {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skills-tabs button {
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .skills-tabs button:hover {
+            background-color: #555;
+        }
+
+        .skills-content {
+            margin-top: 20px;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 400px;
+            background-color: #222;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #005f8a;
+        }
+
+        #contact h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-icons a {
+            font-size: 36px;
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-icons a:hover {
+            color: #0077b5;
+        }
+
+        /* Project Boxes */
+        .project-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .project-box {
+            width: 200px;
+            height: 200px;
+            background-color: #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .project-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .tabs a {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            #about-me {
+                flex-direction: column-reverse; /* Switch order */
+                text-align: center;
+            }
+
+            #about-me img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .social-icons {
+                gap: 30px;
+            }
+
+            .skills-tabs button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .skills-content p {
+                font-size: 14px;
+            }
+
+            form input, form textarea, form button {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tabs {
+                padding: 10px;
+            }
+
+            .social-icons {
+                gap: 20px;
+            }
+
+            .skills-tabs button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .social-icons a {
+                font-size: 36px;
+            }
+
+            form input, form textarea, form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tabs Section -->
+    <div class="tabs">
+        <a href="#">Stacy Keago Portfolio</a>
+        <a href="#home">Home</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- About Me Section -->
+    <section id="home">
+        <div id="about-me">
+            <img src="photo.jpg" alt="Stacy Keago">
+            <div class="text">
+                <h2>About Me</h2>
+                <p>👋 Hello! My name is Stacy, and I am a techie!</p>
+                <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
+                <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
+                <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Add this CSS to handle hover effect and title appearance -->
-<style>
-    .project-box {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        background-color: #444;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: inline-block;
-        overflow: hidden;
-    }
+    <!-- Professional Profiles Section -->
+    <section id="professional-profiles">
+        <h2>PROFESSIONAL PROFILES</h2>
+        <div class="social-icons">
+            <div>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                <p>LinkedIn</p>
+            </div>
+            <div>
+                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                <p>GitHub</p>
+            </div>
+            <div>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
+                <p>HackerRank</p>
+            </div>
+            <div>
+                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank" class="resume"><i class="fas fa-book"></i></a>
+                <p>Resume</p>
+            </div>
+        </div>
+    </section>
 
-    .project-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>Graduate Diploma in Data Science at Moringa School (2022)</li>
+            <li>Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
+        </ul>
+    </section>
 
-    .project-info {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 10px;
-        text-align: center;
-    }
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-tabs">
+            <button onclick="showSkills('languages')">Languages</button>
+            <button onclick="showSkills('visualization')">Visualization</button>
+            <button onclick="showSkills('data-science')">Data Science</button>
+            <button onclick="showSkills('tools')">Tools</button>
+        </div>
 
-    .project-box:hover .project-info {
-        opacity: 1;
-    }
+        <div class="skills-content" id="skills-content">
+            <h3>Languages:</h3>
+            <ul>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>R Programming</li>
+            </ul>
+        </div>
+    </section>
 
-    .project-title {
-        font-size: 16px;
-        font-weight: bold;
-        color: #f1c40f;
-        text-decoration: none;
-        margin-bottom: 10px;
-    }
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/health.jpg" alt="Project 1">
+            </div>
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/fraud.jpg" alt="Project 2">
+            </div>
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/spam%20emails.jpg" alt="Project 3">
+            </div>
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/retailh.jpg" alt="Project 4">
+            </div>
+        </div>
+    </section>
 
-    .project-title:hover {
-        color: #e67e22;
-    }
+    <!-- Contact Section -->
+    <section id="contact">
+        <h3>Contact Me</h3>
+        <form action="https://formspree.io/f/xoqkbxgz" method="POST">
+            <input type="email" name="_replyto" placeholder="Your email address" required />
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-icons">
+            <a href="mailto:stacykeago@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
 
-    .hover-text {
-        font-size: 14px;
-        color: #ddd;
-    }
-</style>
+    <script>
+        function showSkills(category) {
+            const skillsContent = document.getElementById("skills-content");
+            if (category === "languages") {
+                skillsContent.innerHTML = `
+                    <h3>Languages:</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>R Programming</li>
+                    </ul>`;
+            } else if (category === "visualization") {
+                skillsContent.innerHTML = `
+                    <h3>Visualization:</h3>
+                    <ul>
+                        <li>Tableau</li>
+                        <li>Power BI</li>
+                        <li>Looker Studio</li>
+                    </ul>`;
+            } else if (category === "data-science") {
+                skillsContent.innerHTML = `
+                    <h3>Data Science:</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Data Engineering</li>
+                        <li>Deep Learning</li>
+                    </ul>`;
+            } else if (category === "tools") {
+                skillsContent.innerHTML = `
+                    <h3>Tools:</h3>
+                    <ul>
+                        <li>TensorFlow</li>
+                        <li>Docker</li>
+                        <li>Flask</li>
+                    </ul>`;
+            }
+        }
+    </script>
+</body>
+</html>
