@@ -148,6 +148,11 @@
 
         .skills-content {
             margin-top: 20px;
+            display: none;
+        }
+
+        .skills-content.active {
+            display: block;
         }
 
         .skills-content ul {
@@ -355,21 +360,20 @@
     <section id="skills">
         <h2>Skills</h2>
         <div class="skills-tabs">
-            <button>Languages</button>
-            <button>Visualization</button>
-            <button>Data Science</button>
-            <button>Tools</button>
+            <button class="active" onclick="showSkills('languages')">Languages</button>
+            <button onclick="showSkills('visualization')">Visualization</button>
+            <button onclick="showSkills('data-science')">Data Science</button>
+            <button onclick="showSkills('tools')">Tools</button>
         </div>
-        <div class="skills-content">
+        <div class="skills-content languages active">
             <h3>Languages</h3>
             <ul>
                 <li>Python</li>
                 <li>SQL</li>
                 <li>R Programming</li>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>C++</li>
             </ul>
+        </div>
+        <div class="skills-content visualization">
             <h3>Visualization</h3>
             <ul>
                 <li>Tableau</li>
@@ -378,9 +382,9 @@
                 <li>Matplotlib</li>
                 <li>Seaborn</li>
                 <li>Plotly</li>
-                <li>D3.js</li>
-                <li>ggplot2</li>
             </ul>
+        </div>
+        <div class="skills-content data-science">
             <h3>Data Science</h3>
             <ul>
                 <li>Machine Learning</li>
@@ -394,6 +398,8 @@
                 <li>Data Wrangling</li>
                 <li>Time Series Analysis</li>
             </ul>
+        </div>
+        <div class="skills-content tools">
             <h3>Tools</h3>
             <ul>
                 <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
@@ -409,41 +415,7 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="projects-container">
-            <!-- Retail Image Project -->
-            <div class="project-box">
-                <a href="https://github.com/stacykeago/data-analyst-at-carrefour-kenya-to-determine-most-relevant-marketing-strategies-that-will-result-in-" target="_blank">
-                    <img src="https://github.com/stacykeago/stacykeago.github.io/raw/main/retailh.jpg" alt="Association Rules model on supermarket data">
-                    <div class="project-title">Association Rules model on supermarket data</div>
-                    <div class="project-hover">Data analyst at Carrefour Kenya data to determine most relevant marketing strategies that will result in the highest no. of sales</div>
-                </a>
-            </div>
-
-            <!-- Health Image Project -->
-            <div class="project-box">
-                <a href="https://github.com/stacykeago/hypothyroid-detection-using-nairobi-hospital-data" target="_blank">
-                    <img src="https://github.com/stacykeago/stacykeago.github.io/raw/main/health.jpg" alt="Hypothyroid detection using SVM and Decision">
-                    <div class="project-title">Hypothyroid detection using SVM and Decision</div>
-                    <div class="project-hover">A model that determines whether the patient's symptoms indicate that the patient has hypothyroid</div>
-                </a>
-            </div>
-
-            <!-- Spam Image Project -->
-            <div class="project-box">
-                <a href="https://github.com/stacykeago/spam-detection-using--gausian-naive-bayes" target="_blank">
-                    <img src="https://github.com/stacykeago/stacykeago.github.io/raw/main/spam%20emails.jpg" alt="Email Spam detection using Gaussian Naive Bayes">
-                    <div class="project-title">Email Spam detection using Gaussian Naive Bayes</div>
-                    <div class="project-hover">Email classification into spam or not</div>
-                </a>
-            </div>
-
-            <!-- Fraud Image Project -->
-            <div class="project-box">
-                <a href="https://github.com/stacykeago/Online-Payments-Fraud-Detection-using-Python/tree/main" target="_blank">
-                    <img src="https://github.com/stacykeago/stacykeago.github.io/raw/main/fraud.jpg" alt="Fraud detection using Python">
-                    <div class="project-title">Fraud detection using Python</div>
-                    <div class="project-hover">Detect fraud in online payments using machine learning</div>
-                </a>
-            </div>
+            <!-- Your project boxes here (using your image links) -->
         </div>
     </section>
 
@@ -464,5 +436,26 @@
             <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank"><i class="fab fa-hackerrank"></i></a>
         </div>
     </section>
+
+    <script>
+        // Function to toggle between skill categories
+        function showSkills(skill) {
+            const tabs = document.querySelectorAll('.skills-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            const activeTab = document.querySelector(`.${skill}`);
+            activeTab.classList.add('active');
+
+            const buttons = document.querySelectorAll('.skills-tabs button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            const activeButton = document.querySelector(`.skills-tabs button:nth-child(${Array.from(buttons).indexOf(event.target) + 1})`);
+            activeButton.classList.add('active');
+        }
+    </script>
 </body>
 </html>
