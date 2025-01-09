@@ -66,142 +66,6 @@
             text-transform: uppercase;
         }
 
-        /* About Me Section */
-        #about-me {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            flex-direction: row; /* Default to row */
-            justify-content: flex-start;
-        }
-
-        #about-me img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-        }
-
-        #about-me .text {
-            max-width: 600px;
-        }
-
-        /* Professional Profiles Section */
-        .social-icons {
-            display: flex;
-            justify-content: flex-start;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .social-icons div {
-            text-align: center;
-        }
-
-        .social-icons a {
-            font-size: 48px;
-            color: white;
-        }
-
-        .social-icons a.linkedin {
-            color: #0e76a8;
-        }
-
-        .social-icons a.github {
-            color: #333;
-        }
-
-        .social-icons a.hackerrank {
-            color: #00ea64;
-        }
-
-        .social-icons a.resume {
-            color: #f1c40f !important;
-        }
-
-        .social-icons a:hover {
-            opacity: 0.8;
-        }
-
-        /* Skills Section */
-        .skills-tabs {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .skills-tabs button {
-            padding: 10px 20px;
-            background-color: #444;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .skills-tabs button:hover {
-            background-color: #555;
-        }
-
-        .skills-content {
-            margin-top: 20px;
-        }
-
-        /* Contact Form */
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        form input, form textarea {
-            padding: 10px;
-            margin: 10px 0;
-            width: 80%;
-            max-width: 400px;
-            background-color: #222;
-            border: 1px solid #444;
-            color: white;
-        }
-
-        form button {
-            padding: 10px 20px;
-            background-color: #0077b5;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #005f8a;
-        }
-
-        #contact h3 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .contact-icons a {
-            font-size: 36px;
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-icons a:hover {
-            color: #0077b5;
-        }
-
         /* Project Boxes */
         .project-container {
             display: flex;
@@ -216,6 +80,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
+            text-align: center;
+            position: relative;
         }
 
         .project-box img {
@@ -224,66 +90,41 @@
             object-fit: cover;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .tabs {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .tabs a {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            #about-me {
-                flex-direction: column-reverse; /* Switch order */
-                text-align: center;
-            }
-
-            #about-me img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .social-icons {
-                gap: 30px;
-            }
-
-            .skills-tabs button {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-
-            .skills-content p {
-                font-size: 14px;
-            }
-
-            form input, form textarea, form button {
-                width: 90%;
-            }
+        .project-box .info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            transition: opacity 0.3s;
         }
 
-        @media (max-width: 480px) {
-            .tabs {
-                padding: 10px;
-            }
+        .project-box:hover .info {
+            opacity: 1;
+        }
 
-            .social-icons {
+        .project-box .title {
+            margin-top: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Project Links */
+        .project-box .link {
+            text-decoration: none;
+            color: #1e90ff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-container {
+                flex-direction: column;
                 gap: 20px;
-            }
-
-            .skills-tabs button {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-
-            .social-icons a {
-                font-size: 36px;
-            }
-
-            form input, form textarea, form button {
-                width: 100%;
             }
         }
     </style>
@@ -299,39 +140,48 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- About Me Section -->
-    <section id="home">
-        <div id="about-me">
-            <img src="photo.jpg" alt="Stacy Keago">
-            <div class="text">
-                <h2>About Me</h2>
-                <p>👋 Hello! My name is Stacy, and I am a techie!</p>
-                <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
-                <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
-                <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <!-- Spam Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/spam%20emails.jpg" alt="Spam Image">
+                <div class="info">
+                    <p>Email classification into spam or not</p>
+                    <a href="https://github.com/stacykeago/spam-detection-using--gausian-naive-bayes" target="_blank" class="link">View on GitHub</a>
+                </div>
+                <div class="title">Email Spam detection using Gaussian Naive Bayes</div>
             </div>
-        </div>
-    </section>
 
-    <!-- Professional Profiles Section -->
-    <section id="professional-profiles">
-        <h2>PROFESSIONAL PROFILES</h2>
-        <div class="social-icons">
-            <div>
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                <p>LinkedIn</p>
+            <!-- Fraud Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/fraud.jpg" alt="Fraud Image">
+                <div class="info">
+                    <p>Fraud detection in online payments</p>
+                    <a href="https://github.com/stacykeago/Online-Payments-Fraud-Detection-using-Python/tree/main" target="_blank" class="link">View on GitHub</a>
+                </div>
+                <div class="title">Fraud detection using</div>
             </div>
-            <div>
-                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
-                <p>GitHub</p>
+
+            <!-- Retail Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/retailh.jpg" alt="Retail Image">
+                <div class="info">
+                    <p>Data analyst at Carrefour Kenya analyzing marketing strategies</p>
+                    <a href="https://github.com/stacykeago/data-analyst-at-carrefour-kenya-to-determine-most-relevant-marketing-strategies-that-will-result-in-" target="_blank" class="link">View on GitHub</a>
+                </div>
+                <div class="title">Association Rules model on supermarket data</div>
             </div>
-            <div>
-                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
-                <p>HackerRank</p>
-            </div>
-            <div>
-                <a href="https://drive.google.com/file/d/1HiN9Hjh6rumMikDTNYwohxsfzijloTei/view?usp=sharing" target="_blank" class="resume"><i class="fas fa-book"></i></a>
-                <p>Resume</p>
+
+            <!-- Health Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/health.jpg" alt="Health Image">
+                <div class="info">
+                    <p>A model that determines if a patient's symptoms indicate hypothyroidism</p>
+                    <a href="https://github.com/stacykeago/hypothyroid-detection-using-nairobi-hospital-data" target="_blank" class="link">View on GitHub</a>
+                </div>
+                <div class="title">Hypothyroid detection using SVM and Decision</div>
             </div>
         </div>
     </section>
@@ -339,64 +189,23 @@
     <!-- Education Section -->
     <section id="education">
         <h2>Education</h2>
-        <ul>
-            <li>Graduate Diploma in Data Science at Moringa School (2022)</li>
-            <li>Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
-        </ul>
+        <p>Details about my education history...</p>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
-        <div class="skills-tabs">
-            <button onclick="showSkills('languages')">Languages</button>
-            <button onclick="showSkills('visualization')">Visualization</button>
-            <button onclick="showSkills('data-science')">Data Science</button>
-            <button onclick="showSkills('tools')">Tools</button>
-        </div>
-
-        <div class="skills-content" id="skills-content">
-            <h3>Languages:</h3>
-            <ul>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>R Programming</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-container">
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/health.jpg" alt="Project 1">
-            </div>
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/fraud.jpg" alt="Project 2">
-            </div>
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/spam%20emails.jpg" alt="Project 3">
-            </div>
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/retailh.jpg" alt="Project 4">
-            </div>
-        </div>
+        <div id="skills-content"></div>
+        <button onclick="showSkills('languages')">Languages</button>
+        <button onclick="showSkills('visualization')">Visualization</button>
+        <button onclick="showSkills('data-science')">Data Science</button>
+        <button onclick="showSkills('tools')">Tools</button>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h3>Contact Me</h3>
-        <form action="https://formspree.io/f/xoqkbxgz" method="POST">
-            <input type="email" name="_replyto" placeholder="Your email address" required />
-            <textarea name="message" placeholder="Your message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div class="contact-icons">
-            <a href="mailto:stacykeago@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
+        <h2>Contact</h2>
+        <p>Details about how to get in touch...</p>
     </section>
 
     <script>
