@@ -203,16 +203,10 @@
         }
 
         /* Projects Section */
-        #projects {
-            padding: 20px;
-            text-align: center;
-        }
-
         .project-container {
             display: flex;
             justify-content: space-between;
             gap: 20px;
-            flex-wrap: wrap;  /* Ensure that on smaller screens, the boxes wrap */
         }
 
         .project-box {
@@ -222,6 +216,13 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             display: inline-block;
+            overflow: hidden;  /* Ensures images don't overflow */
+        }
+
+        .project-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Ensures the image fills the box without distorting */
         }
 
         /* Responsive Design */
@@ -369,73 +370,34 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-container">
-            <div class="project-box"></div>
-            <div class="project-box"></div>
-            <div class="project-box"></div>
-            <div class="project-box"></div>
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/ad%20clicks.jpg" alt="Project 1">
+            </div>
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/fraud.jpg" alt="Project 2">
+            </div>
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/spam%20emails.jpg" alt="Project 3">
+            </div>
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/retailh.jpg" alt="Project 4">
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h3>Contact Me</h3>
-        <form action="https://formspree.io/f/mbllpbwk" method="POST">
+        <h2>Contact</h2>
+        <form action="https://formspree.io/f/mqkpbvjz" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
         </form>
-
         <div class="contact-icons">
+            <a href="mailto:stacykeago@gmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank"><i class="fab fa-hackerrank"></i></a>
         </div>
     </section>
-
-    <script>
-        function showSkills(skillType) {
-            const skillsContent = document.getElementById('skills-content');
-
-            if (skillType === 'languages') {
-                skillsContent.innerHTML = ` 
-                    <h3>Languages:</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>R Programming</li>
-                    </ul>
-                `;
-            } else if (skillType === 'visualization') {
-                skillsContent.innerHTML = `
-                    <h3>Visualization:</h3>
-                    <ul>
-                        <li>Tableau</li>
-                        <li>Power BI</li>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                    </ul>
-                `;
-            } else if (skillType === 'data-science') {
-                skillsContent.innerHTML = `
-                    <h3>Data Science:</h3>
-                    <ul>
-                        <li>Machine Learning</li>
-                        <li>Deep Learning</li>
-                        <li>Predictive Modeling</li>
-                    </ul>
-                `;
-            } else if (skillType === 'tools') {
-                skillsContent.innerHTML = `
-                    <h3>Tools:</h3>
-                    <ul>
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>Docker</li>
-                    </ul>
-                `;
-            }
-        }
-    </script>
 </body>
 </html>
