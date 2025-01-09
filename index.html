@@ -202,6 +202,28 @@
             color: #0077b5;
         }
 
+        /* Projects Section */
+        #projects {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;  /* Ensure that on smaller screens, the boxes wrap */
+        }
+
+        .project-box {
+            width: 200px;
+            height: 200px;
+            background-color: #444;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .tabs {
@@ -343,19 +365,16 @@
         </div>
     </section>
 
-        <!-- Projects Section -->
     <!-- Projects Section -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="project-container">
-        <div class="project-box"></div>
-        <div class="project-box"></div>
-        <div class="project-box"></div>
-        <div class="project-box"></div>
-    </div>
-</section>
-
-
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project-box"></div>
+            <div class="project-box"></div>
+            <div class="project-box"></div>
+            <div class="project-box"></div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -379,53 +398,42 @@
             const skillsContent = document.getElementById('skills-content');
 
             if (skillType === 'languages') {
-                skillsContent.innerHTML = `
+                skillsContent.innerHTML = ` 
                     <h3>Languages:</h3>
                     <ul>
                         <li>Python</li>
                         <li>SQL</li>
                         <li>R Programming</li>
-                    </ul>`;
+                    </ul>
+                `;
             } else if (skillType === 'visualization') {
                 skillsContent.innerHTML = `
                     <h3>Visualization:</h3>
                     <ul>
                         <li>Tableau</li>
                         <li>Power BI</li>
-                        <li>Looker Studio</li>
                         <li>Matplotlib</li>
                         <li>Seaborn</li>
-                        <li>Plotly</li>
-                        <li>D3.js</li>
-                        <li>ggplot2</li>
-                    </ul>`;
+                    </ul>
+                `;
             } else if (skillType === 'data-science') {
                 skillsContent.innerHTML = `
                     <h3>Data Science:</h3>
                     <ul>
                         <li>Machine Learning</li>
-                        <li>Artificial Intelligence</li>
-                        <li>Computer Vision</li>
-                        <li>Data Analysis</li>
-                        <li>Data Science</li>
-                        <li>Data Engineering</li>
-                        <li>Predictive Modeling</li>
-                        <li>Natural Language Processing (NLP)</li>
                         <li>Deep Learning</li>
-                        <li>Statistical Analysis</li>
-                        <li>Data Wrangling</li>
-                        <li>Time Series Analysis</li>
-                    </ul>`;
+                        <li>Predictive Modeling</li>
+                    </ul>
+                `;
             } else if (skillType === 'tools') {
                 skillsContent.innerHTML = `
                     <h3>Tools:</h3>
                     <ul>
-                        <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
-                        <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
-                        <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
-                        <li>CI/CD</li>
-                        <li>ETL Processes</li>
-                    </ul>`;
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>Docker</li>
+                    </ul>
+                `;
             }
         }
     </script>
