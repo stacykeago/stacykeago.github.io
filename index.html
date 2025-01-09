@@ -66,11 +66,148 @@
             text-transform: uppercase;
         }
 
+        /* About Me Section */
+        #about-me {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            flex-direction: row; /* Default to row */
+            justify-content: flex-start;
+        }
+
+        #about-me img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+        }
+
+        #about-me .text {
+            max-width: 600px;
+        }
+
+        /* Professional Profiles Section */
+        .social-icons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-icons div {
+            text-align: center;
+        }
+
+        .social-icons a {
+            font-size: 48px;
+            color: white;
+        }
+
+        .social-icons a.linkedin {
+            color: #0e76a8;
+        }
+
+        .social-icons a.github {
+            color: #333;
+        }
+
+        .social-icons a.hackerrank {
+            color: #00ea64;
+        }
+
+        .social-icons a.resume {
+            color: #f1c40f !important;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+
+        /* Skills Section */
+        .skills-tabs {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skills-tabs button {
+            padding: 10px 20px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .skills-tabs button:hover {
+            background-color: #555;
+        }
+
+        .skills-content {
+            margin-top: 20px;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 400px;
+            background-color: #222;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #005f8a;
+        }
+
+        #contact h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-icons a {
+            font-size: 36px;
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-icons a:hover {
+            color: #0077b5;
+        }
+
         /* Project Boxes */
         .project-container {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .project-box {
@@ -80,8 +217,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            text-align: center;
             position: relative;
+            margin-bottom: 20px;
         }
 
         .project-box img {
@@ -90,41 +227,105 @@
             object-fit: cover;
         }
 
-        .project-box .info {
+        .project-info {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
             color: white;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
-            border-radius: 5px;
-            transition: opacity 0.3s;
+            text-align: center;
+            display: none;
         }
 
-        .project-box:hover .info {
-            opacity: 1;
+        .project-info h4 {
+            font-size: 14px;
+            margin: 5px 0;
         }
 
-        .project-box .title {
-            margin-top: 10px;
-            color: white;
-            font-weight: bold;
+        .project-info .hover-text {
+            font-size: 12px;
+            margin: 5px 0;
         }
 
-        /* Project Links */
-        .project-box .link {
+        .project-info .project-link {
+            display: block;
+            color: #0077b5;
             text-decoration: none;
-            color: #1e90ff;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .project-box:hover .project-info {
+            display: block;
+        }
+
+        /* Hover effect */
+        .project-box:hover img {
+            opacity: 0.8;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .project-container {
+            .tabs {
                 flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .tabs a {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            #about-me {
+                flex-direction: column-reverse; /* Switch order */
+                text-align: center;
+            }
+
+            #about-me img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .social-icons {
+                gap: 30px;
+            }
+
+            .skills-tabs button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .skills-content p {
+                font-size: 14px;
+            }
+
+            form input, form textarea, form button {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tabs {
+                padding: 10px;
+            }
+
+            .social-icons {
                 gap: 20px;
+            }
+
+            .skills-tabs button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .social-icons a {
+                font-size: 36px;
+            }
+
+            form input, form textarea, form button {
+                width: 100%;
             }
         }
     </style>
@@ -140,111 +341,121 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-container">
-            <!-- Spam Image -->
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/spam%20emails.jpg" alt="Spam Image">
-                <div class="info">
-                    <p>Email classification into spam or not</p>
-                    <a href="https://github.com/stacykeago/spam-detection-using--gausian-naive-bayes" target="_blank" class="link">View on GitHub</a>
-                </div>
-                <div class="title">Email Spam detection using Gaussian Naive Bayes</div>
-            </div>
-
-            <!-- Fraud Image -->
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/fraud.jpg" alt="Fraud Image">
-                <div class="info">
-                    <p>Fraud detection in online payments</p>
-                    <a href="https://github.com/stacykeago/Online-Payments-Fraud-Detection-using-Python/tree/main" target="_blank" class="link">View on GitHub</a>
-                </div>
-                <div class="title">Fraud detection using</div>
-            </div>
-
-            <!-- Retail Image -->
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/retailh.jpg" alt="Retail Image">
-                <div class="info">
-                    <p>Data analyst at Carrefour Kenya analyzing marketing strategies</p>
-                    <a href="https://github.com/stacykeago/data-analyst-at-carrefour-kenya-to-determine-most-relevant-marketing-strategies-that-will-result-in-" target="_blank" class="link">View on GitHub</a>
-                </div>
-                <div class="title">Association Rules model on supermarket data</div>
-            </div>
-
-            <!-- Health Image -->
-            <div class="project-box">
-                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/health.jpg" alt="Health Image">
-                <div class="info">
-                    <p>A model that determines if a patient's symptoms indicate hypothyroidism</p>
-                    <a href="https://github.com/stacykeago/hypothyroid-detection-using-nairobi-hospital-data" target="_blank" class="link">View on GitHub</a>
-                </div>
-                <div class="title">Hypothyroid detection using SVM and Decision</div>
+    <!-- About Me Section -->
+    <section id="home">
+        <div id="about-me">
+            <img src="photo.jpg" alt="Stacy Keago">
+            <div class="text">
+                <h2>About Me</h2>
+                <p>👋 Hello! My name is Stacy, and I am a techie!</p>
+                <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
+                <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
+                <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <p>Details about my education history...</p>
+    <!-- Professional Profiles Section -->
+    <section id="professional-profiles">
+        <h2>PROFESSIONAL PROFILES</h2>
+        <div class="social-icons">
+            <div>
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                <p>LinkedIn</p>
+            </div>
+            <div>
+                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                <p>GitHub</p>
+            </div>
+            <div>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
+                <p>HackerRank</p>
+            </div>
+            <div>
+                <a href="https://drive.google.com/file/d/1HiN9Hjhwn1JfR_4ncfL8qtVdqNSo9rkF/view?usp=sharing" target="_blank" class="resume"><i class="fas fa-file"></i></a>
+                <p>Resume</p>
+            </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
-        <div id="skills-content"></div>
-        <button onclick="showSkills('languages')">Languages</button>
-        <button onclick="showSkills('visualization')">Visualization</button>
-        <button onclick="showSkills('data-science')">Data Science</button>
-        <button onclick="showSkills('tools')">Tools</button>
+        <div class="skills-tabs">
+            <button>Data Science</button>
+            <button>Programming</button>
+            <button>Tools</button>
+        </div>
+        <div class="skills-content">
+            <h3>Data Science Skills</h3>
+            <p>Machine Learning, AI, Computer Vision, NLP, Data Analysis, Time Series Analysis</p>
+            <h3>Programming Skills</h3>
+            <p>Python, R, SQL, JavaScript, Java, C++</p>
+            <h3>Tools</h3>
+            <p>Tableau, Power BI, Looker Studio, Matplotlib, Seaborn, Plotly, D3.js</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <!-- Project 1: Spam Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/spam%20emails.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h4>Email Spam detection using Gaussian Naive Bayes</h4>
+                    <p class="hover-text">Email classification into spam or not</p>
+                    <a href="https://github.com/stacykeago/spam-detection-using--gausian-naive-bayes" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 2: Fraud Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/fraud.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h4>Fraud Detection using Python</h4>
+                    <p class="hover-text">Online payment fraud detection model</p>
+                    <a href="https://github.com/stacykeago/Online-Payments-Fraud-Detection-using-Python/tree/main" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 3: Retail Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/retailh.jpg" alt="Project 3">
+                <div class="project-info">
+                    <h4>Association Rules Model on Supermarket Data</h4>
+                    <p class="hover-text">Data analyst at Carrefour Kenya to determine the most relevant marketing strategies</p>
+                    <a href="https://github.com/stacykeago/data-analyst-at-carrefour-kenya-to-determine-most-relevant-marketing-strategies-that-will-result-in-" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <!-- Project 4: Health Image -->
+            <div class="project-box">
+                <img src="https://raw.githubusercontent.com/stacykeago/stacykeago.github.io/main/health.jpg" alt="Project 4">
+                <div class="project-info">
+                    <h4>Hypothyroid Detection using SVM and Decision Trees</h4>
+                    <p class="hover-text">A model that determines whether a patient's symptoms indicate hypothyroidism</p>
+                    <a href="https://github.com/stacykeago/hypothyroid-detection-using-nairobi-hospital-data" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>Details about how to get in touch...</p>
+        <form action="#">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="contact-icons">
+            <a href="mailto:stacykeago@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
     </section>
-
-    <script>
-        function showSkills(category) {
-            const skillsContent = document.getElementById("skills-content");
-            if (category === "languages") {
-                skillsContent.innerHTML = `
-                    <h3>Languages:</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>R Programming</li>
-                    </ul>`;
-            } else if (category === "visualization") {
-                skillsContent.innerHTML = `
-                    <h3>Visualization:</h3>
-                    <ul>
-                        <li>Tableau</li>
-                        <li>Power BI</li>
-                        <li>Looker Studio</li>
-                    </ul>`;
-            } else if (category === "data-science") {
-                skillsContent.innerHTML = `
-                    <h3>Data Science:</h3>
-                    <ul>
-                        <li>Machine Learning</li>
-                        <li>Data Engineering</li>
-                        <li>Deep Learning</li>
-                    </ul>`;
-            } else if (category === "tools") {
-                skillsContent.innerHTML = `
-                    <h3>Tools:</h3>
-                    <ul>
-                        <li>TensorFlow</li>
-                        <li>Docker</li>
-                        <li>Flask</li>
-                    </ul>`;
-            }
-        }
-    </script>
 </body>
 </html>
