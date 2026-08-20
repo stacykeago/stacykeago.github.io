@@ -280,6 +280,7 @@
             <div class="text">
                 <h2>About Me</h2>
                 <p>👋 Hello! My name is Stacy, and I am a techie!</p>
+                <p>🎓 I am currently studying a Master's in Data Analytics.</p>
                 <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
                 <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
                 <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
@@ -310,6 +311,7 @@
     <section id="education">
         <h2>Education</h2>
         <ul>
+            <li>Master of Science in Data Analytics - Berlin School of Business and Innovation (August 2027)</li>
             <li>Graduate Diploma in Data Science at Moringa School (2022)</li>
             <li>Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
         </ul>
@@ -323,6 +325,7 @@
             <button onclick="showSkills('visualization')">Visualization</button>
             <button onclick="showSkills('data-science')">Data Science</button>
             <button onclick="showSkills('tools')">Tools</button>
+            <button onclick="showSkills('ai-tools')">AI Tools</button>
         </div>
 
         <div class="skills-content" id="skills-content">
@@ -331,6 +334,9 @@
                 <li>Python</li>
                 <li>SQL</li>
                 <li>R Programming</li>
+                <li>English (Fluent/Native)</li>
+                <li>Kiswahili (Fluent/Native)</li>
+                <li>German (A1 - Continuous Learning)</li>
             </ul>
         </div>
     </section>
@@ -369,13 +375,17 @@
                         <li>Python</li>
                         <li>SQL</li>
                         <li>R Programming</li>
+                        <li>English (Fluent/Native)</li>
+                        <li>Kiswahili (Fluent/Native)</li>
+                        <li>German (A1 - Continuous Learning)</li>
                     </ul>`;
             } else if (skillType === 'visualization') {
                 skillsContent.innerHTML = `
                     <h3>Visualization:</h3>
                     <ul>
-                        <li>Tableau</li>
                         <li>Power BI</li>
+                        <li>Tableau</li>
+                        <li>Excel</li>
                         <li>Looker Studio</li>
                         <li>Matplotlib</li>
                         <li>Seaborn</li>
@@ -389,6 +399,7 @@
                     <ul>
                         <li>Machine Learning</li>
                         <li>Artificial Intelligence</li>
+                        <li>Big Data & Data Warehousing</li>
                         <li>Computer Vision</li>
                         <li>Data Analysis</li>
                         <li>Data Science</li>
@@ -404,11 +415,24 @@
                 skillsContent.innerHTML = `
                     <h3>Tools:</h3>
                     <ul>
+                        <li>Excel</li>
+                        <li>Databricks</li>
+                        <li>Jira</li>
+                        <li>Confluence</li>
                         <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
                         <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
                         <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
                         <li>CI/CD</li>
                         <li>ETL Processes</li>
+                    </ul>`;
+            } else if (skillType === 'ai-tools') {
+                skillsContent.innerHTML = `
+                    <h3>AI Tools:</h3>
+                    <ul>
+                        <li><strong>AI Code Assistants:</strong> GitHub Copilot, Cursor (Writing, debugging, and refactoring Python, SQL, and R code)</li>
+                        <li><strong>BI & Analytics Copilots:</strong> Microsoft Power BI Copilot, Tableau Pulse / Looker with Gemini (DAX measures, automated trends, anomaly detection)</li>
+                        <li><strong>Machine Learning & Data Science Platforms:</strong> Databricks (Mosaic AI / Assistant), Hugging Face, DataRobot / H2O.ai (AutoML, model tuning, LLM fine-tuning)</li>
+                        <li><strong>Data Notebooks & Specialized AI Workspaces:</strong> Deepnote / Hex, Julius AI / PandasAI (Conversational AI analysis, interactive data storytelling)</li>
                     </ul>`;
             }
         }
