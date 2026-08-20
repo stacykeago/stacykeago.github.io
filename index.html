@@ -3,439 +3,576 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stacy Keago Portfolio</title>
+    <title>Stacy Keago | Data Portfolio</title>
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-R71825VDTK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-R71825VDTK');
     </script>
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Georgia, serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --pink-bg: #E8C5D8;
+            --pink-card: #F4DFEA;
+            --green-bg: #2D4A27;
+            --green-card: #233B1E;
+            --text-dark: #2D4A27;
+            --text-light: #F4DFEA;
+            --accent-gold: #D4AF37;
         }
 
-        .tabs {
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--pink-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.5px;
+        }
+
+        /* Fixed Navigation */
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
-            padding: 10px 20px;
+            padding: 18px 8%;
             position: fixed;
-            width: 100%;
             top: 0;
-            z-index: 10;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(232, 197, 216, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(45, 74, 39, 0.15);
+            transition: all 0.3s ease;
         }
 
-        .tabs a {
-            color: white;
+        .navbar.green-mode {
+            background: rgba(45, 74, 39, 0.9);
+            border-bottom: 1px solid rgba(244, 223, 234, 0.15);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--green-bg);
             text-decoration: none;
-            font-size: 18px;
-            margin-right: 15px;
-            padding: 10px;
+            transition: color 0.3s;
         }
 
-        .tabs a:hover {
-            background-color: #444;
-            border-radius: 5px;
+        .navbar.green-mode .logo, .navbar.green-mode .nav-links a {
+            color: var(--text-light);
         }
 
-        .tabs a:first-child {
-            margin-right: auto;
-            font-weight: bold;
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
         }
 
-        section {
-            margin-top: 80px;
-            padding: 20px;
+        .nav-links a {
+            color: var(--green-bg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
         }
 
-        section h2 {
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Custom Bracket Shape Frame (Replicating Image Borders) */
+        .bracket-card {
+            position: relative;
+            padding: 35px;
+            background: var(--pink-card);
+            color: var(--text-dark);
+            /* Custom bracket cut-out shape using clip-path */
+            clip-path: polygon(
+                0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px,
+                100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px)
+            );
+            border: 2px solid var(--green-bg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .green-section .bracket-card {
+            background: var(--green-card);
+            color: var(--text-light);
+            border: 2px solid var(--pink-bg);
+        }
+
+        /* Section Layouts */
+        .section-pink {
+            background-color: var(--pink-bg);
+            color: var(--text-dark);
+            padding: 120px 8% 80px;
+        }
+
+        .section-green {
+            background-color: var(--green-bg);
+            color: var(--text-light);
+            padding: 120px 8% 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
             text-transform: uppercase;
         }
 
-        /* About Me Section */
-        #about-me {
+        /* Hero / About */
+        #home {
             display: flex;
             align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            flex-direction: row; /* Default to row */
-            justify-content: flex-start;
-        }
-
-        #about-me img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-        }
-
-        #about-me .text {
-            max-width: 600px;
-        }
-
-        /* Professional Profiles Section */
-        .social-icons {
-            display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
+            min-height: 90vh;
             gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 20px;
         }
 
-        .social-icons div {
-            text-align: center;
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1.1;
         }
 
-        .social-icons a {
-            font-size: 48px;
-            color: white;
+        .hero-text p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            max-width: 550px;
         }
 
-        .social-icons a.linkedin {
-            color: #0e76a8;
+        .profile-img-container {
+            position: relative;
+            padding: 10px;
         }
 
-        .social-icons a.github {
-            color: #333;
+        .profile-img-container img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--green-bg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .social-icons a.hackerrank {
-            color: #00ea64;
-        }
-
-        .social-icons a:hover {
-            opacity: 0.8;
-        }
-
-        /* Skills Section */
-        .skills-tabs {
+        .social-buttons {
             display: flex;
             gap: 15px;
             margin-top: 20px;
+        }
+
+        .btn-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--green-bg);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
             justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-icon:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: #1e331a;
+        }
+
+        /* Education Interactive Timeline */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .edu-card {
+            transition: transform 0.3s ease;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .edu-date {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Skills Interactive Section */
+        .skills-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
-        .skills-tabs button {
-            padding: 10px 20px;
-            background-color: #444;
-            color: white;
-            border: none;
-            border-radius: 5px;
+        .tab-btn {
+            padding: 10px 22px;
+            border: 2px solid var(--green-bg);
+            background: transparent;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-family: inherit;
             cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
-        .skills-tabs button:hover {
-            background-color: #555;
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--green-bg);
+            color: var(--text-light);
         }
 
-        .skills-content {
-            margin-top: 20px;
+        .skills-display-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-        /* Contact Form */
-        form {
+        .skill-item {
+            background: var(--pink-card);
+            border: 1px solid var(--green-bg);
+            padding: 18px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(45, 74, 39, 0.15);
+        }
+
+        /* Projects Grid */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .tag-pill {
+            padding: 4px 12px;
+            background: rgba(232, 197, 216, 0.2);
+            border: 1px solid var(--pink-bg);
+            color: var(--pink-bg);
+            font-size: 0.8rem;
+            border-radius: 15px;
+        }
+
+        /* Contact Section Form */
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .custom-form {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
+            gap: 15px;
         }
 
-        form input, form textarea {
-            padding: 10px;
-            margin: 10px 0;
-            width: 80%;
-            max-width: 400px;
-            background-color: #222;
-            border: 1px solid #444;
-            color: white;
+        .custom-form input, .custom-form textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--pink-card);
+            border: 2px solid var(--green-bg);
+            color: var(--text-dark);
+            font-family: inherit;
+            border-radius: 8px;
         }
 
-        form button {
-            padding: 10px 20px;
-            background-color: #0077b5;
-            color: white;
+        .custom-form input:focus, .custom-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .submit-btn {
+            padding: 14px 30px;
+            background: var(--green-bg);
+            color: var(--text-light);
             border: none;
-            border-radius: 5px;
+            font-weight: 700;
             cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
         }
 
-        form button:hover {
-            background-color: #005f8a;
-        }
-
-        #contact h3 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .contact-icons a {
-            font-size: 36px;
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-icons a:hover {
-            color: #0077b5;
+        .submit-btn:hover {
+            background: #1e331a;
+            transform: translateY(-2px);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .tabs {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .tabs a {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            #about-me {
-                flex-direction: column-reverse; /* Switch order */
+            #home {
+                flex-direction: column-reverse;
                 text-align: center;
+                padding-top: 140px;
             }
 
-            #about-me img {
-                width: 120px;
-                height: 120px;
+            .hero-text p {
+                margin: 0 auto 25px;
             }
 
-            .social-icons {
-                gap: 30px;
+            .social-buttons {
+                justify-content: center;
             }
 
-            .skills-tabs button {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-
-            .skills-content p {
-                font-size: 14px;
-            }
-
-            form input, form textarea, form button {
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .tabs {
-                padding: 10px;
-            }
-
-            .social-icons {
-                gap: 20px;
-            }
-
-            .skills-tabs button {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-
-            .social-icons a {
-                font-size: 36px;
-            }
-
-            form input, form textarea, form button {
-                width: 100%;
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Tabs Section -->
-    <div class="tabs">
-        <a href="#">Stacy Keago Portfolio</a>
-        <a href="#home">Home</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
 
-    <!-- About Me Section -->
-    <section id="home">
-        <div id="about-me">
-            <img src="photo.jpg" alt="Stacy Keago">
-            <div class="text">
-                <h2>About Me</h2>
-                <p>👋 Hello! My name is Stacy, and I am a techie!</p>
-                <p>🎓 I am currently studying a Master's in Data Analytics.</p>
-                <p>💻 I am a passionate Data Scientist and Data Analyst.</p>
-                <p>📊 I specialize in uncovering insights from data to drive impactful decisions.</p>
-                <p>🌐 I’m currently learning Networking, Cloud Computing, and Cybersecurity.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Profiles Section -->
-    <section id="professional-profiles">
-        <h2>PROFESSIONAL PROFILES</h2>
-        <div class="social-icons">
-            <div>
-                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-                <p>LinkedIn</p>
-            </div>
-            <div>
-                <a href="https://github.com/stacykeago" target="_blank" class="github"><i class="fab fa-github"></i></a>
-                <p>GitHub</p>
-            </div>
-            <div>
-                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="hackerrank"><i class="fab fa-hackerrank"></i></a>
-                <p>HackerRank</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li>Master of Science in Data Analytics - Berlin School of Business and Innovation (August 2027)</li>
-            <li>Graduate Diploma in Data Science at Moringa School (2022)</li>
-            <li>Bachelor of Science in Occupational Health and Safety at Kenyatta University (2021)</li>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo serif-font">Stacy Keago</a>
+        <ul class="nav-links">
+            <li><a href="#home">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+    </nav>
+
+    <!-- Hero / About Section (Pink Theme) -->
+    <section class="section-pink" id="home">
+        <div class="hero-text">
+            <h1 class="serif-font">Hello, I'm Stacy! 👋</h1>
+            <p>I am a passionate <strong>Data Scientist & Analyst</strong> currently pursuing my Master's in Data Analytics in Berlin. I specialize in uncovering strategic insights from complex datasets.</p>
+            
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/in/moraas/" target="_blank" class="btn-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/stacykeago" target="_blank" class="btn-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank" class="btn-icon" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
+            </div>
+        </div>
+
+        <div class="profile-img-container">
+            <img src="photo.jpg" alt="Stacy Keago">
+        </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>Skills</h2>
+    <!-- Education Section (Forest Green Theme) -->
+    <section class="section-green green-section" id="education">
+        <h2 class="section-header serif-font">Education</h2>
+        <div class="education-grid">
+            <div class="bracket-card edu-card">
+                <div class="edu-date">August 2027 (Expected)</div>
+                <h3 class="serif-font">M.Sc. in Data Analytics</h3>
+                <p>Berlin School of Business and Innovation</p>
+            </div>
+
+            <div class="bracket-card edu-card">
+                <div class="edu-date">2022</div>
+                <h3 class="serif-font">Graduate Diploma in Data Science</h3>
+                <p>Moringa School</p>
+            </div>
+
+            <div class="bracket-card edu-card">
+                <div class="edu-date">2021</div>
+                <h3 class="serif-font">B.Sc. in Occupational Health & Safety</h3>
+                <p>Kenyatta University</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section (Pink Theme with Interactive Filter Tabs) -->
+    <section class="section-pink" id="skills">
+        <h2 class="section-header serif-font">Skills & Expertise</h2>
+        
         <div class="skills-tabs">
-            <button onclick="showSkills('languages')">Languages</button>
-            <button onclick="showSkills('visualization')">Visualization</button>
-            <button onclick="showSkills('data-science')">Data Science</button>
-            <button onclick="showSkills('tools')">Tools</button>
-            <button onclick="showSkills('ai-tools')">AI Tools</button>
+            <button class="tab-btn active" onclick="filterSkills('all')">All</button>
+            <button class="tab-btn" onclick="filterSkills('languages')">Languages</button>
+            <button class="tab-btn" onclick="filterSkills('bi')">BI & Visualization</button>
+            <button class="tab-btn" onclick="filterSkills('ds')">Data Science</button>
+            <button class="tab-btn" onclick="filterSkills('tools')">Tools</button>
+            <button class="tab-btn" onclick="filterSkills('ai')">AI Workflows</button>
         </div>
 
-        <div class="skills-content" id="skills-content">
-            <h3>Languages:</h3>
-            <ul>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>R Programming</li>
-                <li>English (Fluent/Native)</li>
-                <li>Kiswahili (Fluent/Native)</li>
-                <li>German (A1 - Continuous Learning)</li>
-            </ul>
+        <div class="skills-display-grid" id="skills-grid">
+            <!-- Populated dynamically via JS -->
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Details about projects...</p>
+    <!-- Projects Section (Forest Green Theme) -->
+    <section class="section-green green-section" id="projects">
+        <h2 class="section-header serif-font">Featured Projects</h2>
+        <div class="projects-container">
+            <div class="bracket-card project-card">
+                <h3 class="serif-font">Customer Churn Predictive Model</h3>
+                <p>End-to-end Machine Learning pipeline detecting patterns to forecast enterprise customer attrition.</p>
+                <div class="project-tags">
+                    <span class="tag-pill">Python</span>
+                    <span class="tag-pill">Scikit-Learn</span>
+                    <span class="tag-pill">Pandas</span>
+                </div>
+                <a href="https://github.com/stacykeago" target="_blank" style="color: var(--pink-bg); font-weight: 600; text-decoration: none;">View Code <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="bracket-card project-card">
+                <h3 class="serif-font">Interactive BI Analytics Dashboard</h3>
+                <p>Enterprise Business Intelligence dashboard reporting dynamic KPIs, time-series metrics, and visual trends.</p>
+                <div class="project-tags">
+                    <span class="tag-pill">Power BI</span>
+                    <span class="tag-pill">Tableau</span>
+                    <span class="tag-pill">DAX / SQL</span>
+                </div>
+                <a href="https://github.com/stacykeago" target="_blank" style="color: var(--pink-bg); font-weight: 600; text-decoration: none;">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="bracket-card project-card">
+                <h3 class="serif-font">AES Image Steganography Pipeline</h3>
+                <p>Data security program performing AES-256-GCM encryption and message embedding via LSB techniques.</p>
+                <div class="project-tags">
+                    <span class="tag-pill">Python</span>
+                    <span class="tag-pill">Cryptography</span>
+                    <span class="tag-pill">NumPy</span>
+                </div>
+                <a href="https://github.com/stacykeago" target="_blank" style="color: var(--pink-bg); font-weight: 600; text-decoration: none;">View Repository <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h3>Contact Me</h3>
-        <form action="https://formspree.io/f/mbllpbwk" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-
-        <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/moraas/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/stacykeago" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.hackerrank.com/profile/Kstacy" target="_blank"><i class="fab fa-hackerrank"></i></a>
+    <!-- Contact Section (Pink Theme) -->
+    <section class="section-pink" id="contact">
+        <h2 class="section-header serif-font">Get In Touch</h2>
+        <div class="contact-form-container">
+            <div class="bracket-card">
+                <form action="https://formspree.io/f/mbllpbwk" method="POST" class="custom-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <script>
-        function showSkills(skillType) {
-            const skillsContent = document.getElementById('skills-content');
+        // Skills Dataset
+        const skillItems = [
+            { name: "Python", category: "languages", icon: "fab fa-python" },
+            { name: "SQL", category: "languages", icon: "fas fa-database" },
+            { name: "R", category: "languages", icon: "fas fa-code" },
+            { name: "English (Fluent)", category: "languages", icon: "fas fa-globe" },
+            { name: "Kiswahili (Fluent)", category: "languages", icon: "fas fa-globe" },
+            { name: "German (A1)", category: "languages", icon: "fas fa-globe" },
 
-            if (skillType === 'languages') {
-                skillsContent.innerHTML = `
-                    <h3>Languages:</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>R Programming</li>
-                        <li>English (Fluent/Native)</li>
-                        <li>Kiswahili (Fluent/Native)</li>
-                        <li>German (A1 - Continuous Learning)</li>
-                    </ul>`;
-            } else if (skillType === 'visualization') {
-                skillsContent.innerHTML = `
-                    <h3>Visualization:</h3>
-                    <ul>
-                        <li>Power BI</li>
-                        <li>Tableau</li>
-                        <li>Excel</li>
-                        <li>Looker Studio</li>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                        <li>Plotly</li>
-                        <li>D3.js</li>
-                        <li>ggplot2</li>
-                    </ul>`;
-            } else if (skillType === 'data-science') {
-                skillsContent.innerHTML = `
-                    <h3>Data Science:</h3>
-                    <ul>
-                        <li>Machine Learning</li>
-                        <li>Artificial Intelligence</li>
-                        <li>Big Data & Data Warehousing</li>
-                        <li>Computer Vision</li>
-                        <li>Data Analysis</li>
-                        <li>Data Science</li>
-                        <li>Data Engineering</li>
-                        <li>Predictive Modeling</li>
-                        <li>Natural Language Processing (NLP)</li>
-                        <li>Deep Learning</li>
-                        <li>Statistical Analysis</li>
-                        <li>Data Wrangling</li>
-                        <li>Time Series Analysis</li>
-                    </ul>`;
-            } else if (skillType === 'tools') {
-                skillsContent.innerHTML = `
-                    <h3>Tools:</h3>
-                    <ul>
-                        <li>Excel</li>
-                        <li>Databricks</li>
-                        <li>Jira</li>
-                        <li>Confluence</li>
-                        <li>ML Libraries (TensorFlow, PyTorch, scikit-learn, Keras)</li>
-                        <li>Model Deployment (Flask, FastAPI, Docker, Heroku, AWS Sagemaker)</li>
-                        <li>Cloud Computing (AWS Lambda, Google Cloud Functions)</li>
-                        <li>CI/CD</li>
-                        <li>ETL Processes</li>
-                    </ul>`;
-            } else if (skillType === 'ai-tools') {
-                skillsContent.innerHTML = `
-                    <h3>AI Tools:</h3>
-                    <ul>
-                        <li><strong>AI Code Assistants:</strong> GitHub Copilot, Cursor (Writing, debugging, and refactoring Python, SQL, and R code)</li>
-                        <li><strong>BI & Analytics Copilots:</strong> Microsoft Power BI Copilot, Tableau Pulse / Looker with Gemini (DAX measures, automated trends, anomaly detection)</li>
-                        <li><strong>Machine Learning & Data Science Platforms:</strong> Databricks (Mosaic AI / Assistant), Hugging Face, DataRobot / H2O.ai (AutoML, model tuning, LLM fine-tuning)</li>
-                        <li><strong>Data Notebooks & Specialized AI Workspaces:</strong> Deepnote / Hex, Julius AI / PandasAI (Conversational AI analysis, interactive data storytelling)</li>
-                    </ul>`;
+            { name: "Power BI", category: "bi", icon: "fas fa-chart-bar" },
+            { name: "Tableau", category: "bi", icon: "fas fa-chart-pie" },
+            { name: "Excel", category: "bi", icon: "fas fa-file-excel" },
+            { name: "Looker Studio", category: "bi", icon: "fas fa-chart-line" },
+
+            { name: "Machine Learning", category: "ds", icon: "fas fa-brain" },
+            { name: "Big Data", category: "ds", icon: "fas fa-server" },
+            { name: "Data Warehousing", category: "ds", icon: "fas fa-warehouse" },
+            { name: "Predictive Analytics", category: "ds", icon: "fas fa-calculator" },
+
+            { name: "Databricks", category: "tools", icon: "fas fa-cubes" },
+            { name: "Jira", category: "tools", icon: "fab fa-jira" },
+            { name: "Confluence", category: "tools", icon: "fab fa-confluence" },
+            { name: "Docker", category: "tools", icon: "fab fa-docker" },
+
+            { name: "GitHub Copilot / Cursor", category: "ai", icon: "fas fa-robot" },
+            { name: "Power BI Copilot", category: "ai", icon: "fas fa-magic" },
+            { name: "Hugging Face", category: "ai", icon: "fas fa-smile" },
+            { name: "Julius AI / PandasAI", category: "ai", icon: "fas fa-microchip" }
+        ];
+
+        function displaySkills(skills) {
+            const grid = document.getElementById('skills-grid');
+            grid.innerHTML = skills.map(s => `
+                <div class="skill-item">
+                    <i class="${s.icon}" style="color: var(--green-bg);"></i>
+                    <span>${s.name}</span>
+                </div>
+            `).join('');
+        }
+
+        function filterSkills(cat) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (cat === 'all') {
+                displaySkills(skillItems);
+            } else {
+                displaySkills(skillItems.filter(s => s.category === cat));
             }
         }
+
+        // Initialize default skills display
+        displaySkills(skillItems);
+
+        // Navbar dynamic color update when scrolling into green background sections
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const greenSections = document.querySelectorAll('.green-section');
+            let isGreen = false;
+
+            greenSections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if (rect.top <= 80 && rect.bottom >= 80) {
+                    isGreen = true;
+                }
+            });
+
+            if (isGreen) {
+                navbar.classList.add('green-mode');
+            } else {
+                navbar.classList.remove('green-mode');
+            }
+        });
     </script>
 </body>
 </html>
