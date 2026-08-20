@@ -72,7 +72,6 @@
             border-bottom: 1px solid rgba(244, 223, 234, 0.15);
         }
 
-        /* 4. BIGGER BRAND TITLE */
         .logo {
             font-size: 3rem !important;
             font-weight: 700;
@@ -85,7 +84,6 @@
             color: var(--text-light);
         }
 
-        /* 5. BIGGER TOP-RIGHT NAVIGATION LINKS */
         .nav-links {
             display: flex;
             gap: 36px;
@@ -104,27 +102,6 @@
             opacity: 0.7;
         }
 
-        /* Bracket Card Styling */
-        .bracket-card {
-            position: relative;
-            padding: 35px;
-            background: var(--pink-card);
-            color: var(--text-dark);
-            clip-path: polygon(
-                0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px,
-                100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px)
-            );
-            border: 2px solid var(--green-bg);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .green-section .bracket-card {
-            background: var(--green-card);
-            color: var(--text-light);
-            border: 2px solid var(--pink-bg);
-        }
-
-        /* Layouts */
         .section-pink {
             background-color: var(--pink-bg);
             color: var(--text-dark);
@@ -174,7 +151,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        /* 2 & 3. BIGGER SOCIAL ICONS IN OFFICIAL BRAND COLORS */
         .social-buttons {
             display: flex;
             gap: 24px;
@@ -196,11 +172,11 @@
         }
 
         .btn-icon.linkedin {
-            background-color: #0A66C2 !important; /* Official LinkedIn Blue */
+            background-color: #0A66C2 !important;
         }
 
         .btn-icon.github {
-            background-color: #181717 !important; /* Official GitHub Dark */
+            background-color: #181717 !important;
         }
 
         .btn-icon.hackerrank {
@@ -212,23 +188,64 @@
             box-shadow: 0 12px 26px rgba(0,0,0,0.35);
         }
 
-        /* Education */
+        /* CUSTOM EDUCATION SECTION (Matching Inspo Shape) */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 40px;
+            align-items: start;
         }
 
-        .edu-card:hover {
+        .edu-card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* SVG Clip Path Shape matching inspiration frame */
+        .edu-image-frame {
+            width: 100%;
+            height: 320px;
+            position: relative;
+            margin-bottom: 20px;
+            background: #000;
+            /* Curved top and bottom concave shape */
+            clip-path: path("M 0 30 Q 150 -20 300 30 L 300 290 Q 150 340 0 290 Z");
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .edu-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .edu-card-container:hover .edu-image-frame {
             transform: translateY(-8px);
+            filter: brightness(1.1);
+        }
+
+        .edu-details h3 {
+            font-size: 1.6rem;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .edu-details p {
+            font-size: 1.1rem;
+            color: rgba(244, 223, 234, 0.85);
+            margin-bottom: 8px;
         }
 
         .edu-date {
             font-weight: 700;
             color: var(--accent-gold);
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+            font-size: 1rem;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Skills Tabs */
@@ -285,6 +302,25 @@
         }
 
         /* Projects */
+        .bracket-card {
+            position: relative;
+            padding: 35px;
+            background: var(--pink-card);
+            color: var(--text-dark);
+            clip-path: polygon(
+                0% 15px, 15px 0%, calc(100% - 15px) 0%, 100% 15px,
+                100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0% calc(100% - 15px)
+            );
+            border: 2px solid var(--green-bg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .green-section .bracket-card {
+            background: var(--green-card);
+            color: var(--text-light);
+            border: 2px solid var(--pink-bg);
+        }
+
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -384,6 +420,11 @@
             .logo {
                 font-size: 2.2rem !important;
             }
+            
+            .edu-image-frame {
+                clip-path: path("M 0 20 Q 120 -15 240 20 L 240 260 Q 120 295 0 260 Z");
+                height: 280px;
+            }
         }
     </style>
 </head>
@@ -419,27 +460,47 @@
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education Section with Image Frames and Text Below -->
     <section class="section-green green-section" id="education">
         <h2 class="section-header serif-font">Education</h2>
         <div class="education-grid">
-            <div class="bracket-card edu-card">
-                <div class="edu-date">August 2027 (Expected)</div>
-                <h3 class="serif-font">M.Sc. in Data Analytics</h3>
-                <p>Berlin School of Business and Innovation</p>
+            
+            <!-- Master's Degree (Brandenburg Gate Berlin) -->
+            <div class="edu-card-container">
+                <div class="edu-image-frame">
+                    <img src="brandenburg.jpg" alt="Berlin Brandenburg Gate">
+                </div>
+                <div class="edu-details">
+                    <h3 class="serif-font">M.Sc. in Data Analytics</h3>
+                    <p>Berlin School of Business and Innovation</p>
+                    <div class="edu-date">August 2027 (Expected)</div>
+                </div>
             </div>
 
-            <div class="bracket-card edu-card">
-                <div class="edu-date">2022</div>
-                <h3 class="serif-font">Graduate Diploma in Data Science</h3>
-                <p>Moringa School</p>
+            <!-- Graduate Diploma (Moringa Coding Bootcamp) -->
+            <div class="edu-card-container">
+                <div class="edu-image-frame">
+                    <img src="moringa.jpg" alt="Coding & Bootcamp Screen">
+                </div>
+                <div class="edu-details">
+                    <h3 class="serif-font">Graduate Diploma in Data Science</h3>
+                    <p>Moringa School</p>
+                    <div class="edu-date">2022</div>
+                </div>
             </div>
 
-            <div class="bracket-card edu-card">
-                <div class="edu-date">2021</div>
-                <h3 class="serif-font">B.Sc. in Occupational Health & Safety</h3>
-                <p>Kenyatta University</p>
+            <!-- Bachelor's Degree (Nairobi Skyline) -->
+            <div class="edu-card-container">
+                <div class="edu-image-frame">
+                    <img src="nairobi.jpg" alt="Nairobi Skyline KICC">
+                </div>
+                <div class="edu-details">
+                    <h3 class="serif-font">B.Sc. in Occupational Health & Safety</h3>
+                    <p>Kenyatta University</p>
+                    <div class="edu-date">2021</div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -447,7 +508,6 @@
     <section class="section-pink" id="skills">
         <h2 class="section-header serif-font">Skills & Expertise</h2>
         
-        <!-- 1. SEPARATED PROGRAMMING VS SPOKEN LANGUAGES IN TABS -->
         <div class="skills-tabs">
             <button class="tab-btn active" onclick="filterSkills('all', event)">All</button>
             <button class="tab-btn" onclick="filterSkills('prog-lang', event)">Programming Languages</button>
@@ -516,7 +576,6 @@
     </section>
 
     <script>
-        /* 1. SEPARATED PROGRAMMING LANGUAGES VS SPOKEN LANGUAGES IN DATA STRUCTURE */
         const skillItems = [
             // Programming Languages
             { name: "Python", category: "prog-lang", icon: "fab fa-python" },
