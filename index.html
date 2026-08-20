@@ -171,24 +171,16 @@
             box-shadow: 0 6px 18px rgba(0,0,0,0.25);
         }
 
-        .btn-icon.linkedin {
-            background-color: #0A66C2 !important;
-        }
-
-        .btn-icon.github {
-            background-color: #181717 !important;
-        }
-
-        .btn-icon.hackerrank {
-            background-color: #2EC4B6 !important;
-        }
+        .btn-icon.linkedin { background-color: #0A66C2 !important; }
+        .btn-icon.github { background-color: #181717 !important; }
+        .btn-icon.hackerrank { background-color: #2EC4B6 !important; }
 
         .btn-icon:hover {
             transform: translateY(-6px) scale(1.1);
             box-shadow: 0 12px 26px rgba(0,0,0,0.35);
         }
 
-        /* CUSTOM EDUCATION SECTION (Matching Inspo Shape) */
+        /* EDUCATION SECTION - MATCHING CUTOUT INSPO */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -203,14 +195,12 @@
             text-align: center;
         }
 
-        /* SVG Clip Path Shape matching inspiration frame */
         .edu-image-frame {
             width: 100%;
             height: 320px;
             position: relative;
             margin-bottom: 20px;
             background: #000;
-            /* Curved top and bottom concave shape */
             clip-path: path("M 0 30 Q 150 -20 300 30 L 300 290 Q 150 340 0 290 Z");
             transition: transform 0.3s ease, filter 0.3s ease;
         }
@@ -225,7 +215,7 @@
 
         .edu-card-container:hover .edu-image-frame {
             transform: translateY(-8px);
-            filter: brightness(1.1);
+            filter: brightness(1.08);
         }
 
         .edu-details h3 {
@@ -420,7 +410,7 @@
             .logo {
                 font-size: 2.2rem !important;
             }
-            
+
             .edu-image-frame {
                 clip-path: path("M 0 20 Q 120 -15 240 20 L 240 260 Q 120 295 0 260 Z");
                 height: 280px;
@@ -460,12 +450,12 @@
         </div>
     </section>
 
-    <!-- Education Section with Image Frames and Text Below -->
+    <!-- Education Section -->
     <section class="section-green green-section" id="education">
         <h2 class="section-header serif-font">Education</h2>
         <div class="education-grid">
             
-            <!-- Master's Degree (Brandenburg Gate Berlin) -->
+            <!-- 1. Master's Degree (Berlin Brandenburg Gate) -->
             <div class="edu-card-container">
                 <div class="edu-image-frame">
                     <img src="brandenburg.jpg" alt="Berlin Brandenburg Gate">
@@ -477,10 +467,10 @@
                 </div>
             </div>
 
-            <!-- Graduate Diploma (Moringa Coding Bootcamp) -->
+            <!-- 2. Graduate Diploma (Moringa Coding Bootcamp) -->
             <div class="edu-card-container">
                 <div class="edu-image-frame">
-                    <img src="moringa.jpg" alt="Coding & Bootcamp Screen">
+                    <img src="moringa.jpg" alt="Coding Bootcamp Screen">
                 </div>
                 <div class="edu-details">
                     <h3 class="serif-font">Graduate Diploma in Data Science</h3>
@@ -489,10 +479,10 @@
                 </div>
             </div>
 
-            <!-- Bachelor's Degree (Nairobi Skyline) -->
+            <!-- 3. Bachelor's Degree (Nairobi Skyline) -->
             <div class="edu-card-container">
                 <div class="edu-image-frame">
-                    <img src="nairobi.jpg" alt="Nairobi Skyline KICC">
+                    <img src="nairobi.jpg" alt="Nairobi Skyline">
                 </div>
                 <div class="edu-details">
                     <h3 class="serif-font">B.Sc. in Occupational Health & Safety</h3>
