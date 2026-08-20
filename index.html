@@ -105,19 +105,20 @@
         .section-pink {
             background-color: var(--pink-bg);
             color: var(--text-dark);
-            padding: 160px 8% 80px;
+            padding: 120px 8% 60px;
         }
 
+        /* Reduced vertical padding for education section */
         .section-green {
             background-color: var(--green-bg);
             color: var(--text-light);
-            padding: 160px 8% 80px;
+            padding: 90px 8% 60px;
         }
 
         .section-header {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 50px;
+            font-size: 2.5rem;
+            margin-bottom: 35px;
             text-transform: uppercase;
         }
 
@@ -126,7 +127,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            min-height: 90vh;
+            min-height: 85vh;
             gap: 40px;
         }
 
@@ -180,12 +181,14 @@
             box-shadow: 0 12px 26px rgba(0,0,0,0.35);
         }
 
-        /* EDUCATION SECTION - MATCHING CUTOUT INSPO */
+        /* UPDATED EDUCATION SECTION FIXES */
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
             align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .edu-card-container {
@@ -197,12 +200,14 @@
 
         .edu-image-frame {
             width: 100%;
-            height: 320px;
+            max-width: 300px;
+            height: 270px;
             position: relative;
-            margin-bottom: 20px;
-            background: #000;
-            clip-path: path("M 0 30 Q 150 -20 300 30 L 300 290 Q 150 340 0 290 Z");
-            transition: transform 0.3s ease, filter 0.3s ease;
+            margin-bottom: 18px;
+            overflow: hidden;
+            background: #192c15;
+            clip-path: path("M 0 25 Q 150 -15 300 25 L 300 245 Q 150 285 0 245 Z");
+            transition: transform 0.3s ease;
         }
 
         .edu-image-frame img {
@@ -210,30 +215,64 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            opacity: 0.9;
+            /* Zoomed in slightly & centered focus */
+            transform: scale(1.18);
+            transform-origin: center center;
+            transition: transform 0.3s ease;
         }
 
-        .edu-card-container:hover .edu-image-frame {
-            transform: translateY(-8px);
-            filter: brightness(1.08);
+        /* Custom frame positioning per image */
+        .edu-image-frame img.brandenburg-img {
+            object-position: center 30%;
+        }
+
+        .edu-image-frame img.moringa-img {
+            object-position: center 45%;
+        }
+
+        .edu-image-frame img.nairobi-img {
+            object-position: center 25%;
+        }
+
+        .edu-card-container:hover .edu-image-frame img {
+            transform: scale(1.25);
+        }
+
+        /* Aligned text styling */
+        .edu-details {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 120px;
         }
 
         .edu-details h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: var(--text-light);
             margin-bottom: 6px;
+            line-height: 1.25;
+            min-height: 3.6em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .edu-details p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: rgba(244, 223, 234, 0.85);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            min-height: 2.4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .edu-date {
             font-weight: 700;
             color: var(--accent-gold);
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -385,6 +424,10 @@
         }
 
         @media (max-width: 900px) {
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
             #home {
                 flex-direction: column-reverse;
                 text-align: center;
@@ -411,9 +454,8 @@
                 font-size: 2.2rem !important;
             }
 
-            .edu-image-frame {
-                clip-path: path("M 0 20 Q 120 -15 240 20 L 240 260 Q 120 295 0 260 Z");
-                height: 280px;
+            .edu-details h3, .edu-details p {
+                min-height: auto;
             }
         }
     </style>
@@ -450,15 +492,15 @@
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Refined Education Section -->
     <section class="section-green green-section" id="education">
         <h2 class="section-header serif-font">Education</h2>
         <div class="education-grid">
             
-            <!-- 1. Master's Degree (Berlin Brandenburg Gate) -->
+            <!-- Master's Degree -->
             <div class="edu-card-container">
                 <div class="edu-image-frame">
-                    <img src="brandenburg.jpg" alt="Berlin Brandenburg Gate">
+                    <img src="brandenburg.jpg" alt="Berlin Brandenburg Gate" class="brandenburg-img">
                 </div>
                 <div class="edu-details">
                     <h3 class="serif-font">M.Sc. in Data Analytics</h3>
@@ -467,10 +509,10 @@
                 </div>
             </div>
 
-            <!-- 2. Graduate Diploma (Moringa Coding Bootcamp) -->
+            <!-- Graduate Diploma -->
             <div class="edu-card-container">
                 <div class="edu-image-frame">
-                    <img src="moringa.jpg" alt="Coding Bootcamp Screen">
+                    <img src="moringa.jpg" alt="Coding Bootcamp Screen" class="moringa-img">
                 </div>
                 <div class="edu-details">
                     <h3 class="serif-font">Graduate Diploma in Data Science</h3>
@@ -479,10 +521,10 @@
                 </div>
             </div>
 
-            <!-- 3. Bachelor's Degree (Nairobi Skyline) -->
+            <!-- Bachelor's Degree -->
             <div class="edu-card-container">
                 <div class="edu-image-frame">
-                    <img src="nairobi.jpg" alt="Nairobi Skyline">
+                    <img src="nairobi.jpg" alt="Nairobi Skyline" class="nairobi-img">
                 </div>
                 <div class="edu-details">
                     <h3 class="serif-font">B.Sc. in Occupational Health & Safety</h3>
