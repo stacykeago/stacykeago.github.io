@@ -61,7 +61,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(232, 197, 216, 0.9);
+            background: rgba(232, 197, 216, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(45, 74, 39, 0.15);
             transition: all 0.3s ease;
@@ -72,9 +72,9 @@
             border-bottom: 1px solid rgba(244, 223, 234, 0.15);
         }
 
-        /* Updated Title Size */
+        /* 4. BIGGER BRAND TITLE */
         .logo {
-            font-size: 2.4rem;
+            font-size: 3rem !important;
             font-weight: 700;
             color: var(--green-bg);
             text-decoration: none;
@@ -85,7 +85,7 @@
             color: var(--text-light);
         }
 
-        /* Updated Upper-Right Nav Link Sizes */
+        /* 5. BIGGER TOP-RIGHT NAVIGATION LINKS */
         .nav-links {
             display: flex;
             gap: 36px;
@@ -96,7 +96,7 @@
             color: var(--green-bg);
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.35rem;
+            font-size: 1.6rem !important;
             transition: opacity 0.3s;
         }
 
@@ -128,13 +128,13 @@
         .section-pink {
             background-color: var(--pink-bg);
             color: var(--text-dark);
-            padding: 140px 8% 80px;
+            padding: 160px 8% 80px;
         }
 
         .section-green {
             background-color: var(--green-bg);
             color: var(--text-light);
-            padding: 140px 8% 80px;
+            padding: 160px 8% 80px;
         }
 
         .section-header {
@@ -174,42 +174,42 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        /* Larger Social Icons in Official Brand Colors */
+        /* 2 & 3. BIGGER SOCIAL ICONS IN OFFICIAL BRAND COLORS */
         .social-buttons {
             display: flex;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 24px;
+            margin-top: 30px;
         }
 
         .btn-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px !important;
+            height: 80px !important;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 2.2rem;
-            color: #ffffff;
+            font-size: 2.8rem !important;
+            color: #ffffff !important;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
         }
 
         .btn-icon.linkedin {
-            background-color: #0A66C2;
+            background-color: #0A66C2 !important; /* Official LinkedIn Blue */
         }
 
         .btn-icon.github {
-            background-color: #181717;
+            background-color: #181717 !important; /* Official GitHub Dark */
         }
 
         .btn-icon.hackerrank {
-            background-color: #2EC4B6;
+            background-color: #2EC4B6 !important;
         }
 
         .btn-icon:hover {
             transform: translateY(-6px) scale(1.1);
-            box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.35);
         }
 
         /* Education */
@@ -378,7 +378,11 @@
             }
 
             .nav-links a {
-                font-size: 1.1rem;
+                font-size: 1.2rem !important;
+            }
+            
+            .logo {
+                font-size: 2.2rem !important;
             }
         }
     </style>
@@ -443,6 +447,7 @@
     <section class="section-pink" id="skills">
         <h2 class="section-header serif-font">Skills & Expertise</h2>
         
+        <!-- 1. SEPARATED PROGRAMMING VS SPOKEN LANGUAGES IN TABS -->
         <div class="skills-tabs">
             <button class="tab-btn active" onclick="filterSkills('all', event)">All</button>
             <button class="tab-btn" onclick="filterSkills('prog-lang', event)">Programming Languages</button>
@@ -511,6 +516,7 @@
     </section>
 
     <script>
+        /* 1. SEPARATED PROGRAMMING LANGUAGES VS SPOKEN LANGUAGES IN DATA STRUCTURE */
         const skillItems = [
             // Programming Languages
             { name: "Python", category: "prog-lang", icon: "fab fa-python" },
