@@ -181,7 +181,7 @@
             box-shadow: 0 12px 26px rgba(0,0,0,0.35);
         }
 
-        /* UPDATED EDUCATION SECTION FIXES */
+        /* EDUCATION SECTION STYLES */
         .education-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -215,13 +215,11 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            /* Zoomed in slightly & centered focus */
             transform: scale(1.18);
             transform-origin: center center;
             transition: transform 0.3s ease;
         }
 
-        /* Custom frame positioning per image */
         .edu-image-frame img.brandenburg-img {
             object-position: center 30%;
         }
@@ -238,7 +236,6 @@
             transform: scale(1.25);
         }
 
-        /* Aligned text styling */
         .edu-details {
             width: 100%;
             display: flex;
@@ -557,15 +554,17 @@
     <section class="section-green green-section" id="projects">
         <h2 class="section-header serif-font">Featured Projects</h2>
         <div class="projects-container">
+            <!-- Maize Crop Disease Detection Card -->
             <div class="bracket-card project-card">
-                <h3 class="serif-font">Customer Churn Predictive Model</h3>
-                <p>End-to-end Machine Learning pipeline detecting patterns to forecast enterprise customer attrition.</p>
+                <h3 class="serif-font">Maize Crop Disease Detection Using ML & Computer Vision</h3>
+                <p>Computer vision and machine learning pipeline for detecting and classifying maize crop diseases to support precision agriculture.</p>
                 <div class="project-tags">
                     <span class="tag-pill">Python</span>
+                    <span class="tag-pill">OpenCV</span>
+                    <span class="tag-pill">TensorFlow</span>
                     <span class="tag-pill">Scikit-Learn</span>
-                    <span class="tag-pill">Pandas</span>
                 </div>
-                <a href="https://github.com/stacykeago" target="_blank" style="color: var(--pink-bg); font-weight: 600; text-decoration: none;">View Code <i class="fas fa-arrow-right"></i></a>
+                <a href="https://github.com/stacykeago/Maize-Crop-Disease-Detection-Using-Machine-Learning-and-Computer-Vision" target="_blank" style="color: var(--pink-bg); font-weight: 600; text-decoration: none;">View Code <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="bracket-card project-card">
